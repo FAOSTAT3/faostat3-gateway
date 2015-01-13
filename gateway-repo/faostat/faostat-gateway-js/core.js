@@ -10,7 +10,7 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : '168.202.28.214:8080',
+        baseURL : 'localhost:8080',
         baseURL_WDS : 'http://faostat3.fao.org/wds',
         datasource : "faostatdb",
 
