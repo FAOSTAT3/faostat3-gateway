@@ -1,3 +1,0 @@
-[submodule "gateway-repo/faostat/modules/geobricks_ui_distribution"]
-	path = gateway-repo/faostat/modules/geobricks_ui_distribution
-	url = https://github.com/geobricks/geobricks_ui_distribution.git
