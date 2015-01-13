@@ -1,0 +1,433 @@
+/** FAOSTAT HOME**/
+
+@import 'sprites';
+@import 'mixin';
+@import 'colors';
+@import 'faostat-grid';
+@import 'typography';
+@import 'standard-elements';
+@import 'fs-tooltip';
+@import 'fs-home-modal';
+
+@import 'home-domains';
+
+
+
+.centralHolder {
+  background-color: white;
+  min-height: 150px;
+  padding: 10px 0 0 0;
+}
+
+
+
+/* HEADER */
+.fs-head {
+  background-color: $main-blue;
+  height: 50px;
+}
+
+.fs-logo-holder {
+  width: 200px;
+  height: 50px;
+  background-color: $dark-blue;
+  padding: 7px 0 0 20px;
+  float: left;
+
+}
+
+.fs-logo {
+  @include retina-image('images/fs-logo-new.png', 160px , 34px);
+}
+
+.fs-united {
+  background-color: $main-blue;
+  width:550px;
+  height: 50px;
+  float: left;
+  padding: 14px 0 0 65px;
+  color: white;
+    p {
+      line-height: 7px;
+      height: 12px;
+    }
+}
+
+.fs-languages {
+  background-color: $main-blue;
+  height: 100%;
+  float: right;
+  color: white;
+  padding: 15px 20px 0 0;
+    span {
+      margin: 0 7px 0 7px;
+      cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+        &.fs-lan-selected {
+          text-decoration: underline;
+        }
+    }
+}
+
+.fs-menu-holder{
+  padding: 0 20px 0 10px;
+  background-color: white;
+  position: relative;
+  height: 33px;
+  //@include box-shadow(0px, 4px, 3px, $shadow-color, false);
+  @include box-shadow(0px, 0px, 1px, $shadow-color, false);
+}
+
+.fs-menu {
+  span {
+    cursor: pointer;
+    font:  $fs-text-menu;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 4px solid transparent;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0 8px;
+    max-width: 155px;
+    min-width: 20px;
+    /*overflow: hidden; Rimettere se dovesse dare problemi*/
+    padding: 8px 0 4px 0;
+    text-overflow: ellipsis;
+    position: relative;
+      &:hover{
+        border-color: $medium-blue;
+        transition: border-color 0.218s ease 0s;
+      }
+  }
+  /** Apply to menu element if selected */
+  span.fs-menu-selected{
+    color: $dark-blue;
+    font: $fs-text-menu-selected;
+    border-bottom: 4px solid $medium-blue;
+    transition: border-color 0.218s ease 0s;
+  }
+ }
+
+#searchFS{
+  position: absolute;
+  top: 3px;
+  right: 20px;
+}
+
+#searchFS input[type="text"] {
+
+  /* Reset Previous Search Box */
+  box-shadow: none;
+  color: $main-text;
+  font-weight: normal;
+  /* End reset */
+
+  border: 1px solid #d1d1d1;
+  border-radius: 20px;
+  padding: 4px 15px 4px 30px !important;
+  transition: all 0.7s ease 0s;
+  width: 100px;
+    &:focus {
+      width: 180px;
+    }
+}
+
+
+/* HINTS */
+.fs-home-hints{
+  height: 15px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.fs-help{
+  @include fs-sprite($fs-sprite-35, 35px,35px,2,2);
+  position: absolute;
+  top: -10px;
+  right: 0px;
+}
+
+
+/* FOOTER */
+.fs-footer {
+  height: 75px;
+  background-color: $dark-blue;
+  position: relative;
+}
+
+
+.fs-menu-footer {
+  span {
+    cursor: pointer;
+    font:  $fs-text-menu;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    border-top: 4px solid transparent;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0 8px;
+    max-width: 155px;
+    min-width: 20px;
+    overflow: hidden;
+    padding: 8px 0 4px 0;
+    text-overflow: ellipsis;
+    &:hover{
+      border-color: white;
+      transition: border-color 0.218s ease 0s;
+    }
+  }
+  /** Apply to menu element if selected */
+  .fs-menu-footer-selected {
+    border-top: 4px solid white;
+    transition: border-color 0.218s ease 0s;
+  }
+}
+
+.fs-footer-link{
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  a{
+    &:link {
+      color: white !important; /* Non necessario: togliere conflitto con Faostat.css/3159 */
+    }
+  }
+}
+
+
+.fs-feedback {
+  height: 50px;
+  background-color: $main-blue;
+  position: relative;
+  .fs-feedback-system-button {
+    cursor: pointer;
+    float: right;
+    height: 50px;
+    background-color: $main-blue;
+    span{
+      font: $fs-text-big;
+      color: white;
+      position: relative;
+      top: 15px;
+      right: 60px;
+      i{
+        color: white;
+        position: relative;
+        left: 0;
+        transition: all 0.218s ease 0s;
+      }
+    }
+    .fs-feedback-icon{
+      @include fs-square(50px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 7px;
+      background-color: $medium-blue;
+      &:before{
+        content: '';
+        display: block;
+        @include fs-sprite($fs-sprite-35, 35px,35px,1,1);
+      }
+    }
+  }
+  &:hover{
+    .fs-feedback-system-button {
+      i {
+        left: 4px;
+        transition: left 0.218s ease 0s;
+      }
+    }
+  }
+}
+
+
+
+/* HOMEPAGE CONTENT */
+.fs-btn-database {
+  @include fs-rect-button (3, 1, $medium-blue, $medium-blue-hover);
+}
+
+.fs-btn-countryProfile {
+  @include fs-rect-button (4, 1, $main-blue, $blue-hover);
+}
+
+.fs-btn-key {
+  @include fs-rect-button (6, 1, $gray, $gray);
+  pointer-events: none; /* Disable button until KEY INDICATORS are ready */
+}
+
+/* HOME CHARTS */
+.fs-home-charts {
+  height: 250px;
+}
+
+.fs-chart-title{
+  font: $fs-chart-title;
+  em {
+    margin-left: 10px;
+  }
+}
+
+.fs-calendar-icon{
+  @include fs-sprite-circle52 (5, 1, $medium-blue)
+}
+
+.fs-download-icon{
+  @include fs-sprite-circle52 (3, 1, $medium-blue)
+}
+
+/* PARTNERS */
+.fs-partners-container {
+  display: table;
+}
+
+.fs-partner-grid{
+  width: (100%) / 9;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+
+
+/* DATABASE UPDATES */
+.fs-updates-content {
+  span{
+    display: block;
+    margin-bottom: 10px;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  h5 {
+    margin-top: 20px;
+  }
+}
+
+
+.obj-box{ position: relative} /* Cancellare perchè simone l'ha aggiunto su faostat.css */
+
+.obj-box-bottom {
+  padding-bottom: 15px;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    width: 100%;
+    background-color: $light-gray;
+    @include border-radius(0 0 3px 3px);
+  }
+}
+
+.obj-box-bottom-btn {
+  text-align: center;
+  margin-top: 50px;
+  .obj-box-bottom-btn-content {
+    cursor: pointer;
+    text-align: center;
+    .obj-box-bottom-text{
+      font: $fs-text-box-bottom;
+      color: $medium-blue;
+      margin: 12px 0 0 8px;
+    }
+  }
+}
+
+/* STATISTICAL YEARBOOK */
+.fs-yearbook-content{
+  img {
+    float: left;
+    margin:0 20px 20px 0;
+  }
+}
+
+/* LINKS */
+.fs-links-content{
+  a{
+    display: block;
+    color: $main-text !important;
+    font-weight: 700;
+    padding:0 0 10px 25px;
+    position: relative;
+    &:before {
+      display: block;
+      content: '';
+      background-image: url('images/arrow-link.png');
+      @include fs-square(7px);
+      position: absolute;
+      top: 5px;
+      left: 0;
+    }
+    &:hover{
+      text-decoration: underline;
+      &:before{
+        transform:rotate(-45deg);
+        transition: transform 0.218s ease 0s;
+      }
+    }
+  }
+}
+
+/** FAOSTAT WARNING **/
+.fs-warning-wrapper{
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: $transp-black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  .fs-warning {
+    position: fixed;
+    @include box-shadow(0px, 4px, 3px, $shadow-color, false);
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -150px;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    @include border-radius(3px);
+    .standard-title{
+      text-align: center;
+      margin-top: 10px;
+    }
+    .fs-warning-message {
+      padding: $half-padding;
+    }
+    .fs-download-hint{
+      max-height: 160px;
+      overflow-y: scroll;
+      padding: 0 10px 0 10px;
+      ul{
+        list-style: none !important;
+        padding: $half-padding;
+        li {
+          list-style: none !important;
+          padding: 4px;
+        }
+      }
+    }
+    .fs-warning-btn{
+
+      #dwl-preview-btn{
+        top: 0;
+        width: 200px;
+        margin-left: -100px;
+        left: 50%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+

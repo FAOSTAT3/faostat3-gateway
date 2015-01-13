@@ -1,0 +1,37 @@
+/* FAOSTAT Typography */
+
+$fs-text-menu : normal normal 400 12px/normal 'Roboto', sans-serif;
+$fs-text-menu-selected : normal normal 900 12px/normal 'Roboto', sans-serif;
+$fs-text-normal : normal normal 400 12px/normal 'Roboto', sans-serif;
+$fs-text-small : normal normal 400 10px/normal 'Roboto', sans-serif;
+$fs-text-big : normal normal 400 14px/normal 'Roboto', sans-serif;
+
+$fs-text-domain-title :normal normal 300 14px/14px 'Roboto Condensed', sans-serif !important;
+$fs-standard-title : normal normal 400 16px/normal 'Roboto Condensed', sans-serif !important;
+$fs-standard-subtitle : normal normal 400 13px/normal 'Roboto Condensed', sans-serif !important;
+$fs-chart-title : normal normal 400 14px/normal 'Roboto Condensed', sans-serif !important;
+$fs-rect-btn-title : normal normal 400 14px/12px 'Roboto Condensed', sans-serif !important;
+$fs-rect-btn-text-small : normal normal 400 10px/12px 'Roboto Condensed', sans-serif !important;
+$fs-text-box-bottom : normal normal 300 18px/normal 'Roboto Condensed', sans-serif !important;
+
+.fs-bold {font-weight: 700;}
+
+.fs-text-standard-blue{color: $main-blue;}
+
+
+h3 {
+  font: $fs-standard-title;
+  color: $main-blue;
+}
+
+h4 {
+  font: $fs-standard-subtitle;
+}
+
+h5 {
+  font: $fs-text-normal;
+  text-transform: uppercase;
+  color: $main-blue;
+}
+
+b {font-weight: 700;}

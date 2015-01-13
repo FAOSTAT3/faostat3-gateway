@@ -1,0 +1,1222 @@
+@charset "UTF-8";
+/** FAOSTAT HOME**/
+/* FAOSTAT Sprites */
+/* FAOSTAT Mixin */
+/* FAOSTAT Colors definition */
+/* FAOSTAT Main Grid */
+.fs_main_holder {
+  width: 1000px;
+  margin-left: -500px;
+  left: 50%;
+  position: relative;
+  overflow: hidden; }
+
+.fs_row {
+  width: 980px;
+  position: relative;
+  margin: 10px;
+  display: table; }
+
+.fs_row_nested {
+  width: 100%;
+  position: relative;
+  display: table; }
+
+.fs_column, .fs_column_1, .fs_column_3, .fs_column_4, .fs_column_6, .fs_column_8, .fs_column_12 {
+  padding: 0 10px 0 10px;
+  position: relative;
+  float: left; }
+
+.fs_column_1 {
+  width: 81.66667px; }
+
+.fs_column_3 {
+  width: 245px; }
+
+.fs_column_4 {
+  width: 326.66667px; }
+
+.fs_column_6 {
+  width: 490px; }
+
+.fs_column_8 {
+  width: 735px; }
+
+.fs_column_12 {
+  width: 980px; }
+
+.fs_column_split {
+  width: 50%;
+  position: relative;
+  float: left; }
+  .fs_column_split:first-child {
+    padding: 0 10px 0 0; }
+  .fs_column_split:last-child {
+    padding: 0 0 0 10px; }
+
+.fs_row:after, .fs_row:before {
+  clear: both; }
+
+.fs-left-content-bg {
+  position: absolute;
+  background-color: #e5e5e5;
+  width: 735px;
+  height: 100%;
+  top: 0;
+  left: -10px; }
+
+.fs-hp-content {
+  margin-bottom: 0; }
+  .fs-hp-content .fs_column_8 {
+    padding: 10px 30px 0px 10px; }
+
+.fs-goToBottom {
+  position: absolute;
+  bottom: 0; }
+
+.fs-goToBottomPadding {
+  position: absolute;
+  bottom: 20px; }
+
+.obj-box-bottom-btn-content {
+  display: inline-block;
+  position: relative; }
+  .obj-box-bottom-btn-content div {
+    float: left; }
+
+.fs-max-image {
+  width: 100%;
+  height: auto; }
+
+/* FAOSTAT Typography */
+.fs-bold {
+  font-weight: 700; }
+
+.fs-text-standard-blue {
+  color: #379bce; }
+
+h3 {
+  font: normal normal 400 16px/normal "Roboto Condensed", sans-serif !important;
+  color: #379bce; }
+
+h4 {
+  font: normal normal 400 13px/normal "Roboto Condensed", sans-serif !important; }
+
+h5 {
+  font: normal normal 400 12px/normal "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #379bce; }
+
+b {
+  font-weight: 700; }
+
+a {
+  text-decoration: none; }
+
+* {
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important; }
+
+em {
+  font-style: normal; }
+
+input {
+  padding-left: 5px !important; }
+
+/* TOOLTIP */
+#powerTip {
+  background-color: rgba(64, 118, 158, 0.9);
+  border-radius: 3px;
+  color: white;
+  cursor: default;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  /*white-space: nowrap; Rimettere se c'è qualche problema */
+  z-index: 2;
+  max-width: 150px; }
+
+#powerTip.n:before, #powerTip.e:before, #powerTip.s:before, #powerTip.w:before, #powerTip.ne:before, #powerTip.nw:before, #powerTip.se:before, #powerTip.sw:before {
+  content: "";
+  position: absolute; }
+
+#powerTip.n:before, #powerTip.s:before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  left: 50%;
+  margin-left: -5px; }
+
+#powerTip.e:before, #powerTip.w:before {
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  margin-top: -5px;
+  top: 50%; }
+
+#powerTip.n:before {
+  border-top: 10px solid rgba(64, 118, 158, 0.9);
+  bottom: -10px; }
+
+#powerTip.e:before {
+  border-right: 10px solid rgba(64, 118, 158, 0.9);
+  left: -10px; }
+
+#powerTip.s:before {
+  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
+  top: -10px; }
+
+#powerTip.w:before {
+  border-left: 10px solid rgba(64, 118, 158, 0.9);
+  right: -10px; }
+
+#powerTip.ne:before, #powerTip.se:before {
+  border-left: 0 none;
+  border-right: 10px solid transparent;
+  left: 10px; }
+
+#powerTip.nw:before, #powerTip.sw:before {
+  border-left: 10px solid transparent;
+  border-right: 0 none;
+  right: 10px; }
+
+#powerTip.ne:before, #powerTip.nw:before {
+  border-top: 10px solid rgba(64, 118, 158, 0.9);
+  bottom: -10px; }
+
+#powerTip.se:before, #powerTip.sw:before {
+  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
+  top: -10px; }
+
+/* FAOSTAT - Modal */
+.md-perspective,
+.md-perspective body {
+  height: 100%;
+  overflow: hidden; }
+
+.md-perspective body {
+  background: #222;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px; }
+
+.container {
+  background: #ffffff;
+  min-height: 100%; }
+
+.md-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 630px;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.md-show {
+  visibility: visible; }
+
+.md-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.md-show ~ .md-overlay {
+  opacity: 1;
+  visibility: visible; }
+
+/* Content styles */
+.md-content {
+  color: #666666;
+  background: #ffffff;
+  position: relative;
+  border-radius: 3px;
+  margin: 0 auto;
+  text-align: center; }
+
+.md-content h3 {
+  margin: 0;
+  padding: 0.4em;
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: 300;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px 3px 0 0; }
+
+.md-content > div {
+  padding: 15px 40px 30px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.15em; }
+
+.md-content > div p {
+  margin: 0;
+  padding: 10px 0; }
+
+.md-content > div ul {
+  margin: 0;
+  padding: 0 0 30px 20px; }
+
+.md-content > div ul li {
+  padding: 5px 0; }
+
+.md-content button {
+  display: block;
+  margin: 0 auto;
+  font-size: 0.8em; }
+
+/* Effect 11: Super scaled */
+.md-effect-11 .md-content {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+  .md-effect-11 .md-content button {
+    border: none;
+    padding: 0.6em 1.2em;
+    background: #379bce;
+    color: #fff;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    margin: 3px 2px;
+    border-radius: 2px; }
+  .md-effect-11 .md-content button:hover {
+    background: #40769e; }
+
+.md-show.md-effect-11 .md-content {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
+
+/* DOMAIN ICONS */
+.fs-domain, .fs-domain-prod, .fs-domain-emiag, .fs-domain-pric, .fs-domain-popu, .fs-domain-trade, .fs-domain-emilu, .fs-domain-reso, .fs-domain-fores, .fs-domain-foodsec, .fs-domain-foodsup, .fs-domain-inves, .fs-domain-asti, .fs-domain-fbs, .fs-domain-commbal, .fs-domain-agriind, .fs-domain-emerg {
+  height: 70px;
+  padding: 15px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #e6e6e6; }
+  .fs-domain .fs-domain-ico, .fs-domain-prod .fs-domain-ico, .fs-domain-emiag .fs-domain-ico, .fs-domain-pric .fs-domain-ico, .fs-domain-popu .fs-domain-ico, .fs-domain-trade .fs-domain-ico, .fs-domain-emilu .fs-domain-ico, .fs-domain-reso .fs-domain-ico, .fs-domain-fores .fs-domain-ico, .fs-domain-foodsec .fs-domain-ico, .fs-domain-foodsup .fs-domain-ico, .fs-domain-inves .fs-domain-ico, .fs-domain-asti .fs-domain-ico, .fs-domain-fbs .fs-domain-ico, .fs-domain-commbal .fs-domain-ico, .fs-domain-agriind .fs-domain-ico, .fs-domain-emerg .fs-domain-ico {
+    float: left;
+    position: relative;
+    border: 1px solid #379bce;
+    padding: 1px 0 1px 0;
+    width: 38px;
+    height: 38px;
+    -webkit-border-radius: 38px;
+    -moz-border-radius: 38px;
+    -ms-border-radius: 38px;
+    border-radius: 38px; }
+    .fs-domain .fs-domain-ico:before, .fs-domain-prod .fs-domain-ico:before, .fs-domain-emiag .fs-domain-ico:before, .fs-domain-pric .fs-domain-ico:before, .fs-domain-popu .fs-domain-ico:before, .fs-domain-trade .fs-domain-ico:before, .fs-domain-emilu .fs-domain-ico:before, .fs-domain-reso .fs-domain-ico:before, .fs-domain-fores .fs-domain-ico:before, .fs-domain-foodsec .fs-domain-ico:before, .fs-domain-foodsup .fs-domain-ico:before, .fs-domain-inves .fs-domain-ico:before, .fs-domain-asti .fs-domain-ico:before, .fs-domain-fbs .fs-domain-ico:before, .fs-domain-commbal .fs-domain-ico:before, .fs-domain-agriind .fs-domain-ico:before, .fs-domain-emerg .fs-domain-ico:before {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      background-image: url("images/sprite_35px_faostat.png");
+      background-repeat: no-repeat;
+      width: 35px;
+      height: 35px;
+      background-position: 0px -70px; }
+    .fs-domain .fs-domain-ico:after, .fs-domain-prod .fs-domain-ico:after, .fs-domain-emiag .fs-domain-ico:after, .fs-domain-pric .fs-domain-ico:after, .fs-domain-popu .fs-domain-ico:after, .fs-domain-trade .fs-domain-ico:after, .fs-domain-emilu .fs-domain-ico:after, .fs-domain-reso .fs-domain-ico:after, .fs-domain-fores .fs-domain-ico:after, .fs-domain-foodsec .fs-domain-ico:after, .fs-domain-foodsup .fs-domain-ico:after, .fs-domain-inves .fs-domain-ico:after, .fs-domain-asti .fs-domain-ico:after, .fs-domain-fbs .fs-domain-ico:after, .fs-domain-commbal .fs-domain-ico:after, .fs-domain-agriind .fs-domain-ico:after, .fs-domain-emerg .fs-domain-ico:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -22px;
+      margin-top: -22px;
+      background-color: transparent;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      border-radius: 100%;
+      border: 4px solid transparent;
+      transition: all 0.218s ease 0s; }
+  .fs-domain .fs-domain-text, .fs-domain-prod .fs-domain-text, .fs-domain-emiag .fs-domain-text, .fs-domain-pric .fs-domain-text, .fs-domain-popu .fs-domain-text, .fs-domain-trade .fs-domain-text, .fs-domain-emilu .fs-domain-text, .fs-domain-reso .fs-domain-text, .fs-domain-fores .fs-domain-text, .fs-domain-foodsec .fs-domain-text, .fs-domain-foodsup .fs-domain-text, .fs-domain-inves .fs-domain-text, .fs-domain-asti .fs-domain-text, .fs-domain-fbs .fs-domain-text, .fs-domain-commbal .fs-domain-text, .fs-domain-agriind .fs-domain-text, .fs-domain-emerg .fs-domain-text {
+    margin-left: 10px;
+    height: 38px;
+    float: left;
+    padding: 5px 0; }
+    .fs-domain .fs-domain-text .fs-domain-title, .fs-domain-prod .fs-domain-text .fs-domain-title, .fs-domain-emiag .fs-domain-text .fs-domain-title, .fs-domain-pric .fs-domain-text .fs-domain-title, .fs-domain-popu .fs-domain-text .fs-domain-title, .fs-domain-trade .fs-domain-text .fs-domain-title, .fs-domain-emilu .fs-domain-text .fs-domain-title, .fs-domain-reso .fs-domain-text .fs-domain-title, .fs-domain-fores .fs-domain-text .fs-domain-title, .fs-domain-foodsec .fs-domain-text .fs-domain-title, .fs-domain-foodsup .fs-domain-text .fs-domain-title, .fs-domain-inves .fs-domain-text .fs-domain-title, .fs-domain-asti .fs-domain-text .fs-domain-title, .fs-domain-fbs .fs-domain-text .fs-domain-title, .fs-domain-commbal .fs-domain-text .fs-domain-title, .fs-domain-agriind .fs-domain-text .fs-domain-title, .fs-domain-emerg .fs-domain-text .fs-domain-title {
+      max-width: 175px;
+      min-width: 125px;
+      font: normal normal 300 14px/14px "Roboto Condensed", sans-serif !important;
+      color: #379bce;
+      background-color: white;
+      /* remove if there is no animation */
+      position: relative;
+      /* remove if there is no animation */
+      z-index: 1;
+      /* remove if there is no animation */
+      top: 6px;
+      /* remove if there is no animation */
+      transition: top 0.1s ease 0s; }
+    .fs-domain .fs-domain-text span, .fs-domain-prod .fs-domain-text span, .fs-domain-emiag .fs-domain-text span, .fs-domain-pric .fs-domain-text span, .fs-domain-popu .fs-domain-text span, .fs-domain-trade .fs-domain-text span, .fs-domain-emilu .fs-domain-text span, .fs-domain-reso .fs-domain-text span, .fs-domain-fores .fs-domain-text span, .fs-domain-foodsec .fs-domain-text span, .fs-domain-foodsup .fs-domain-text span, .fs-domain-inves .fs-domain-text span, .fs-domain-asti .fs-domain-text span, .fs-domain-fbs .fs-domain-text span, .fs-domain-commbal .fs-domain-text span, .fs-domain-agriind .fs-domain-text span, .fs-domain-emerg .fs-domain-text span {
+      margin-right: 20px;
+      position: relative;
+      /* remove if there is no animation */
+      top: -6px;
+      /* remove if there is no animation */
+      transition: top 0.1s ease 0s; }
+  .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover, .fs-domain-emerg:hover {
+    /* remove if there is no animation */ }
+    .fs-domain:hover .fs-domain-text .fs-domain-title, .fs-domain-prod:hover .fs-domain-text .fs-domain-title, .fs-domain-emiag:hover .fs-domain-text .fs-domain-title, .fs-domain-pric:hover .fs-domain-text .fs-domain-title, .fs-domain-popu:hover .fs-domain-text .fs-domain-title, .fs-domain-trade:hover .fs-domain-text .fs-domain-title, .fs-domain-emilu:hover .fs-domain-text .fs-domain-title, .fs-domain-reso:hover .fs-domain-text .fs-domain-title, .fs-domain-fores:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsec:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsup:hover .fs-domain-text .fs-domain-title, .fs-domain-inves:hover .fs-domain-text .fs-domain-title, .fs-domain-asti:hover .fs-domain-text .fs-domain-title, .fs-domain-fbs:hover .fs-domain-text .fs-domain-title, .fs-domain-commbal:hover .fs-domain-text .fs-domain-title, .fs-domain-agriind:hover .fs-domain-text .fs-domain-title, .fs-domain-emerg:hover .fs-domain-text .fs-domain-title {
+      top: 0px;
+      transition: top 0.218s ease 0s; }
+    .fs-domain:hover .fs-domain-text span, .fs-domain-prod:hover .fs-domain-text span, .fs-domain-emiag:hover .fs-domain-text span, .fs-domain-pric:hover .fs-domain-text span, .fs-domain-popu:hover .fs-domain-text span, .fs-domain-trade:hover .fs-domain-text span, .fs-domain-emilu:hover .fs-domain-text span, .fs-domain-reso:hover .fs-domain-text span, .fs-domain-fores:hover .fs-domain-text span, .fs-domain-foodsec:hover .fs-domain-text span, .fs-domain-foodsup:hover .fs-domain-text span, .fs-domain-inves:hover .fs-domain-text span, .fs-domain-asti:hover .fs-domain-text span, .fs-domain-fbs:hover .fs-domain-text span, .fs-domain-commbal:hover .fs-domain-text span, .fs-domain-agriind:hover .fs-domain-text span, .fs-domain-emerg:hover .fs-domain-text span {
+      top: 2px;
+      transition: top 0.218s ease 0s; }
+    .fs-domain:hover .fs-domain-ico:after, .fs-domain-prod:hover .fs-domain-ico:after, .fs-domain-emiag:hover .fs-domain-ico:after, .fs-domain-pric:hover .fs-domain-ico:after, .fs-domain-popu:hover .fs-domain-ico:after, .fs-domain-trade:hover .fs-domain-ico:after, .fs-domain-emilu:hover .fs-domain-ico:after, .fs-domain-reso:hover .fs-domain-ico:after, .fs-domain-fores:hover .fs-domain-ico:after, .fs-domain-foodsec:hover .fs-domain-ico:after, .fs-domain-foodsup:hover .fs-domain-ico:after, .fs-domain-inves:hover .fs-domain-ico:after, .fs-domain-asti:hover .fs-domain-ico:after, .fs-domain-fbs:hover .fs-domain-ico:after, .fs-domain-commbal:hover .fs-domain-ico:after, .fs-domain-agriind:hover .fs-domain-ico:after, .fs-domain-emerg:hover .fs-domain-ico:after {
+      border: 4px solid rgba(55, 155, 206, 0.3);
+      transition: all 0.218s ease 0s; }
+  .fs-domain:last-child, .fs-domain-prod:last-child, .fs-domain-emiag:last-child, .fs-domain-pric:last-child, .fs-domain-popu:last-child, .fs-domain-trade:last-child, .fs-domain-emilu:last-child, .fs-domain-reso:last-child, .fs-domain-fores:last-child, .fs-domain-foodsec:last-child, .fs-domain-foodsup:last-child, .fs-domain-inves:last-child, .fs-domain-asti:last-child, .fs-domain-fbs:last-child, .fs-domain-commbal:last-child, .fs-domain-agriind:last-child, .fs-domain-emerg:last-child {
+    border-bottom: 1px solid transparent; }
+
+/* ----------------------------------------- */
+.fs-domain-prod .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-prod .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: 0px -70px; }
+
+.fs-domain-emiag .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-emiag .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px -105px; }
+
+.fs-domain-pric .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-pric .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: 0px -140px; }
+
+.fs-domain-popu .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-popu .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -70px -140px; }
+
+/* ----------------------------------------- */
+.fs-domain-trade .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-trade .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -70px -105px; }
+
+.fs-domain-emilu .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-emilu .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px -105px; }
+
+.fs-domain-reso .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-reso .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -35px -140px; }
+
+.fs-domain-fores .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-fores .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -140px -70px; }
+
+/* ----------------------------------------- */
+.fs-domain-foodsec .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-foodsec .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -70px -70px; }
+
+.fs-domain-foodsup .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-foodsup .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -35px -70px; }
+
+.fs-domain-inves .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-inves .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px -70px; }
+
+.fs-domain-asti .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-asti .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px -140px; }
+
+/* ----------------------------------------- */
+.fs-domain-fbs .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-fbs .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -35px -105px; }
+
+.fs-domain-commbal .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-commbal .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px -140px; }
+
+.fs-domain-agriind .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-agriind .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: 0px -105px; }
+
+.fs-domain-emerg .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-emerg .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -140px -140px; }
+
+.fs-domain-lastbtn {
+  height: 70px;
+  padding: 25px 0 15px 0; }
+  .fs-domain-lastbtn span {
+    float: right;
+    color: #379bce;
+    cursor: pointer; }
+    .fs-domain-lastbtn span:hover {
+      text-decoration: underline; }
+
+.centralHolder {
+  background-color: white;
+  min-height: 150px;
+  padding: 10px 0 0 0; }
+
+/* HEADER */
+.fs-head {
+  background-color: #379bce;
+  height: 50px; }
+
+.fs-logo-holder {
+  width: 200px;
+  height: 50px;
+  background-color: #174c74;
+  padding: 7px 0 0 20px;
+  float: left; }
+
+.fs-logo {
+  width: 160px;
+  height: 34px;
+  background-image: url("images/fs-logo-new.png");
+  background-size: 160px 34px;
+  background-repeat: no-repeat; }
+
+.fs-united {
+  background-color: #379bce;
+  width: 550px;
+  height: 50px;
+  float: left;
+  padding: 14px 0 0 65px;
+  color: white; }
+  .fs-united p {
+    line-height: 7px;
+    height: 12px; }
+
+.fs-languages {
+  background-color: #379bce;
+  height: 100%;
+  float: right;
+  color: white;
+  padding: 15px 20px 0 0; }
+  .fs-languages span {
+    margin: 0 7px 0 7px;
+    cursor: pointer; }
+    .fs-languages span:hover {
+      text-decoration: underline; }
+    .fs-languages span.fs-lan-selected {
+      text-decoration: underline; }
+
+.fs-menu-holder {
+  padding: 0 20px 0 10px;
+  background-color: white;
+  position: relative;
+  height: 33px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); }
+
+.fs-menu {
+  /** Apply to menu element if selected */ }
+  .fs-menu span {
+    cursor: pointer;
+    font: normal normal 400 12px/normal "Roboto", sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 4px solid transparent;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0 8px;
+    max-width: 155px;
+    min-width: 20px;
+    /*overflow: hidden; Rimettere se dovesse dare problemi*/
+    padding: 8px 0 4px 0;
+    text-overflow: ellipsis;
+    position: relative; }
+    .fs-menu span:hover {
+      border-color: #40769e;
+      transition: border-color 0.218s ease 0s; }
+  .fs-menu span.fs-menu-selected {
+    color: #174c74;
+    font: normal normal 900 12px/normal "Roboto", sans-serif;
+    border-bottom: 4px solid #40769e;
+    transition: border-color 0.218s ease 0s; }
+
+#searchFS {
+  position: absolute;
+  top: 3px;
+  right: 20px; }
+
+#searchFS input[type="text"] {
+  /* Reset Previous Search Box */
+  box-shadow: none;
+  color: #666666;
+  font-weight: normal;
+  /* End reset */
+  border: 1px solid #d1d1d1;
+  border-radius: 20px;
+  padding: 4px 15px 4px 30px !important;
+  transition: all 0.7s ease 0s;
+  width: 100px; }
+  #searchFS input[type="text"]:focus {
+    width: 180px; }
+
+/* HINTS */
+.fs-home-hints {
+  height: 15px;
+  position: relative;
+  margin-bottom: 0; }
+
+.fs-help {
+  background-image: url("images/sprite_35px_faostat.png");
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  background-position: -35px -35px;
+  position: absolute;
+  top: -10px;
+  right: 0px; }
+
+/* FOOTER */
+.fs-footer {
+  height: 75px;
+  background-color: #174c74;
+  position: relative; }
+
+.fs-menu-footer {
+  /** Apply to menu element if selected */ }
+  .fs-menu-footer span {
+    cursor: pointer;
+    font: normal normal 400 12px/normal "Roboto", sans-serif;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    border-top: 4px solid transparent;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0 8px;
+    max-width: 155px;
+    min-width: 20px;
+    overflow: hidden;
+    padding: 8px 0 4px 0;
+    text-overflow: ellipsis; }
+    .fs-menu-footer span:hover {
+      border-color: white;
+      transition: border-color 0.218s ease 0s; }
+  .fs-menu-footer .fs-menu-footer-selected {
+    border-top: 4px solid white;
+    transition: border-color 0.218s ease 0s; }
+
+.fs-footer-link {
+  position: absolute;
+  right: 0;
+  bottom: 3px; }
+  .fs-footer-link a:link {
+    color: white !important;
+    /* Non necessario: togliere conflitto con Faostat.css/3159 */ }
+
+.fs-feedback {
+  height: 50px;
+  background-color: #379bce;
+  position: relative; }
+  .fs-feedback .fs-feedback-system-button {
+    cursor: pointer;
+    float: right;
+    height: 50px;
+    background-color: #379bce; }
+    .fs-feedback .fs-feedback-system-button span {
+      font: normal normal 400 14px/normal "Roboto", sans-serif;
+      color: white;
+      position: relative;
+      top: 15px;
+      right: 60px; }
+      .fs-feedback .fs-feedback-system-button span i {
+        color: white;
+        position: relative;
+        left: 0;
+        transition: all 0.218s ease 0s; }
+    .fs-feedback .fs-feedback-system-button .fs-feedback-icon {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 7px;
+      background-color: #40769e; }
+      .fs-feedback .fs-feedback-system-button .fs-feedback-icon:before {
+        content: '';
+        display: block;
+        background-image: url("images/sprite_35px_faostat.png");
+        background-repeat: no-repeat;
+        width: 35px;
+        height: 35px;
+        background-position: 0px 0px; }
+  .fs-feedback:hover .fs-feedback-system-button i {
+    left: 4px;
+    transition: left 0.218s ease 0s; }
+
+/* HOMEPAGE CONTENT */
+.fs-btn-database {
+  background-color: #40769e;
+  min-height: 75px;
+  width: 100%;
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  cursor: pointer;
+  margin: 20px 0 20px 0; }
+  .fs-btn-database:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -70px 0px; }
+  .fs-btn-database span {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    height: 55px;
+    font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
+    .fs-btn-database span em {
+      font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-database:hover {
+    background: #40769e;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #40769e), color-stop(100%, #598db2));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #40769e 0%, #598db2 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
+
+.fs-btn-countryProfile {
+  background-color: #379bce;
+  min-height: 75px;
+  width: 100%;
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  cursor: pointer;
+  margin: 20px 0 20px 0; }
+  .fs-btn-countryProfile:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -105px 0px; }
+  .fs-btn-countryProfile span {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    height: 55px;
+    font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
+    .fs-btn-countryProfile span em {
+      font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-countryProfile:hover {
+    background: #379bce;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #379bce), color-stop(100%, #62b6e0));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #379bce 0%, #62b6e0 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
+
+.fs-btn-key {
+  background-color: #a3a3a3;
+  min-height: 75px;
+  width: 100%;
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  cursor: pointer;
+  margin: 20px 0 20px 0;
+  pointer-events: none;
+  /* Disable button until KEY INDICATORS are ready */ }
+  .fs-btn-key:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -175px 0px; }
+  .fs-btn-key span {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    height: 55px;
+    font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
+    .fs-btn-key span em {
+      font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-key:hover {
+    background: #a3a3a3;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a3a3a3), color-stop(100%, #a3a3a3));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #a3a3a3 0%, #a3a3a3 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
+
+/* HOME CHARTS */
+.fs-home-charts {
+  height: 250px; }
+
+.fs-chart-title {
+  font: normal normal 400 14px/normal "Roboto Condensed", sans-serif !important; }
+  .fs-chart-title em {
+    margin-left: 10px; }
+
+.fs-calendar-icon {
+  background-color: #40769e;
+  padding: 8px 0 8px 0;
+  width: 52px;
+  height: 52px;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  border-radius: 52px; }
+  .fs-calendar-icon:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -140px 0px; }
+
+.fs-download-icon {
+  background-color: #40769e;
+  padding: 8px 0 8px 0;
+  width: 52px;
+  height: 52px;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  border-radius: 52px; }
+  .fs-download-icon:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -70px 0px; }
+
+/* PARTNERS */
+.fs-partners-container {
+  display: table; }
+
+.fs-partner-grid {
+  width: 11.11111%;
+  float: left;
+  position: relative;
+  cursor: pointer; }
+
+/* DATABASE UPDATES */
+.fs-updates-content span {
+  display: block;
+  margin-bottom: 10px; }
+  .fs-updates-content span:hover {
+    text-decoration: underline; }
+.fs-updates-content h5 {
+  margin-top: 20px; }
+
+.obj-box {
+  position: relative; }
+
+/* Cancellare perchè simone l'ha aggiunto su faostat.css */
+.obj-box-bottom {
+  padding-bottom: 15px; }
+  .obj-box-bottom:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    width: 100%;
+    background-color: whitesmoke;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px; }
+
+.obj-box-bottom-btn {
+  text-align: center;
+  margin-top: 50px; }
+  .obj-box-bottom-btn .obj-box-bottom-btn-content {
+    cursor: pointer;
+    text-align: center; }
+    .obj-box-bottom-btn .obj-box-bottom-btn-content .obj-box-bottom-text {
+      font: normal normal 300 18px/normal "Roboto Condensed", sans-serif !important;
+      color: #40769e;
+      margin: 12px 0 0 8px; }
+
+/* STATISTICAL YEARBOOK */
+.fs-yearbook-content img {
+  float: left;
+  margin: 0 20px 20px 0; }
+
+/* LINKS */
+.fs-links-content a {
+  display: block;
+  color: #666666 !important;
+  font-weight: 700;
+  padding: 0 0 10px 25px;
+  position: relative; }
+  .fs-links-content a:before {
+    display: block;
+    content: '';
+    background-image: url("images/arrow-link.png");
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 5px;
+    left: 0; }
+  .fs-links-content a:hover {
+    text-decoration: underline; }
+    .fs-links-content a:hover:before {
+      transform: rotate(-45deg);
+      transition: transform 0.218s ease 0s; }
+
+/** FAOSTAT WARNING **/
+.fs-warning-wrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(64, 118, 158, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483647; }
+  .fs-warning-wrapper .fs-warning {
+    position: fixed;
+    -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -150px;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+    .fs-warning-wrapper .fs-warning .standard-title {
+      text-align: center;
+      margin-top: 10px; }
+    .fs-warning-wrapper .fs-warning .fs-warning-message {
+      padding: 10px; }
+    .fs-warning-wrapper .fs-warning .fs-download-hint {
+      max-height: 160px;
+      overflow-y: scroll;
+      padding: 0 10px 0 10px; }
+      .fs-warning-wrapper .fs-warning .fs-download-hint ul {
+        list-style: none !important;
+        padding: 10px; }
+        .fs-warning-wrapper .fs-warning .fs-download-hint ul li {
+          list-style: none !important;
+          padding: 4px; }
+    .fs-warning-wrapper .fs-warning .fs-warning-btn #dwl-preview-btn {
+      top: 0;
+      width: 200px;
+      margin-left: -100px;
+      left: 50%;
+      margin-bottom: 10px; }

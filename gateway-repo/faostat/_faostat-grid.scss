@@ -1,0 +1,126 @@
+/* FAOSTAT Main Grid */
+
+$fs-main-width : 1000px;
+$fs-secondary-width : $fs-main-width - 20px;
+$main-padding : 20px;
+$half-padding : $main-padding/2;
+
+.fs_main_holder {
+  width: $fs-main-width;
+  margin-left: -($fs-main-width/2);
+  left: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.fs_row {
+  width: $fs-secondary-width;
+  position: relative;
+  margin: 10px;
+  display: table;
+}
+
+.fs_row_nested {
+  width: 100%;
+  position: relative;
+  display: table;
+}
+
+.fs_column {
+  padding: 0 10px 0 10px;
+  position: relative;
+  float: left;
+}
+
+.fs_column_1 {
+  @extend .fs_column;
+  width: $fs-secondary-width / 12;
+}
+
+
+.fs_column_3 {
+  @extend .fs_column;
+  width: $fs-secondary-width / 4;
+}
+
+.fs_column_4 {
+  @extend .fs_column;
+  width: $fs-secondary-width / 3;
+}
+
+.fs_column_6 {
+  @extend .fs_column;
+  width: $fs-secondary-width / 2;
+}
+
+.fs_column_8 {
+  @extend .fs_column;
+  width: $fs-secondary-width / 4 * 3;
+}
+
+.fs_column_12 {
+  @extend .fs_column;
+  width: $fs-secondary-width;
+}
+
+.fs_column_split {
+  width: 50%;
+  position: relative;
+  float: left;
+  &:first-child{
+    padding: 0 $half-padding 0 0;
+  }
+  &:last-child{
+    padding: 0 0 0 $half-padding;
+  }
+}
+
+
+.fs_row:after, .fs_row:before {
+  clear: both;
+}
+
+.fs-left-content-bg {
+  position: absolute;
+  background-color: $box-bg;
+  width: $fs-secondary-width / 4 * 3;
+  height: 100%;
+  top: 0;
+  left: $main-padding/2*(-1);
+}
+
+
+
+.fs-hp-content {
+  margin-bottom: 0;
+  .fs_column_8 {
+    padding: 10px 30px 0px 10px;
+  }
+}
+
+.fs-partners-container {
+
+}
+
+.fs-goToBottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.fs-goToBottomPadding {
+  position: absolute;
+  bottom: $main-padding;
+}
+
+.obj-box-bottom-btn-content{
+  display: inline-block;
+  position: relative;
+  div{
+    float: left;
+  }
+}
+
+.fs-max-image {
+  width: 100%;
+  height: auto;
+}

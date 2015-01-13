@@ -1,0 +1,112 @@
+/* FAOSTAT Mixin */
+
+
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin retina-image($img-url, $real-width, $real-height) {
+  width: $real-width;
+  height: $real-height;
+  background-image: url($img-url);
+  background-size: $real-width $real-height;
+  background-repeat: no-repeat;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin gradient ($colorA, $colorB) {
+  background: $colorA; /* Old browsers */
+  background: -moz-linear-gradient(top,  $colorA 0%, $colorB 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$colorA), color-stop(100%,$colorB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $colorA 0%,$colorB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $colorA 0%,$colorB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $colorA 0%,$colorB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $colorA 0%,$colorB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorA', endColorstr='$colorB',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin fs-sprite($url, $width, $height , $x, $y) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  width: $width;
+  height: $height;
+  background-position: (($x)-1)*$width*(-1) (($y)-1)*$height*(-1);
+}
+
+@mixin fs-square($side) {
+  width: $side;
+  height: $side;
+}
+
+@mixin fs-sprite-circle52 ($x, $y, $color) {
+  background-color: $color;
+  padding: 8px 0 8px 0;
+  @include fs-square(52px);
+  @include border-radius(52px);
+  &:before{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    @include fs-sprite($fs-sprite-35, 35px, 35px, $x, $y);
+  }
+}
+
+@mixin fs-domain-ico ($x, $y) {
+  border: 1px solid $main-blue;
+  padding: 1px 0 1px 0;
+  @include fs-square(38px);
+  @include border-radius(38px);
+  &:before{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    @include fs-sprite($fs-sprite-35, 35px, 35px, $x, $y);
+  }
+}
+
+@mixin fs-rect-button ($x, $y, $colorA, $colorB) {
+  background-color: $colorA;
+  min-height: 75px;
+  width: 100%;
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  cursor: pointer;
+  margin: 20px 0 20px 0;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    @include fs-sprite($fs-sprite-35, 35px, 35px, $x, $y);
+  }
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    height: 55px;
+    font: $fs-rect-btn-title;
+    em {
+      font: $fs-rect-btn-text-small;
+    }
+  }
+  &:hover {
+    @include gradient ($colorA, $colorB);
+  }
+}
