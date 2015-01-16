@@ -18,21 +18,9 @@
             "S" : "DICIEMBRE 2014"
         },
         "description":  {
-            "E" : "2012 Fertilizer update.",
-            "F" : "Mise &agrave; jour 2012 des engrais.",
-            "S" : "Detalles de actualización de fertilizantes para el 2012."
-        }
-    },
-    {
-        "title": {
-            "E" : "DECEMBER 2014",
-            "F" : "D&Eacute;CEMBRE 2014",
-            "S" : "DICIEMBRE 2014"
-        },
-        "description":  {
-            "E" : "2012 updates for the Emissions-agriculture and Emission-land use databases.",
-            "F" : "Mise &agrave; jour 2012 des bases de donn&eacute;es des &eacute;missions-agriculture et des &eacute;missions-utilisation des terres.",
-            "S" : "Detalles de actualizaci&oacute;n de las bases de datos de emisiones-agricultura y emisiones-uso de la tierra para el 2012."
+            "E" : "2012 Pesticide Trade and Pesticide Use update.",
+            "F" : "Mise &agrave; jour du commerce des pesticides et de leur utilisation.",
+            "S" : "Detalles de actualizaci&oacute;n del comercio de pesticidas y de su uso para el 2012."
         }
     }
-]   
+]  
