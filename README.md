@@ -1,2 +1,2 @@
-# fastat3-gateway
+# faostat3-gateway
 FAOSTAT3 Gateway and static files.
