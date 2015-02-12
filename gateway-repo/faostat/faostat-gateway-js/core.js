@@ -175,7 +175,7 @@ if (!window.CORE) {
                 if ( History.getState().data.state != state ) {
                     var t = new Date().getTime();
                     CORE.timestamps[t] = t;
-                    History.pushState({timestamp: t, state : state}, state, state);
+                    History.pushState({timestamp: t, state : state}, "FAOSTAT", state);
                 }
             }
         },
