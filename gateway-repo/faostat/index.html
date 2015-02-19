@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
 
 <head>
     <title>FAOSTAT</title>
     <link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='//fenixapps.fao.org/repository/fonts/roboto/roboto-main.css' rel='stylesheet' type='text/css'>
-
 
     <!-- Download Pivot -->
     <!-- Fancybox -->
@@ -22,16 +22,8 @@
     <!-- jquery.rangeslider (SEARCH) -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
-    <!-- Tiled-Analysis -->
-    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />
-    <link href='//fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery.power.tip/1.1.0/jquery.powertip.css" type="text/css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet.css" />
-    <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
-    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
-    <link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
-
+    <!-- chosen -->
+    <!-- <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'> -->
 
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>
@@ -43,12 +35,87 @@
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />
     <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-    <link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />
 </head>
+
+<!--<head>-->
+    <!--<title>FAOSTAT</title>-->
+    <!--<link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>-->
+    <!--<link href='//fenixapps.fao.org/repository/fonts/roboto/roboto-main.css' rel='stylesheet' type='text/css'>-->
+
+
+    <!--&lt;!&ndash; Download Pivot &ndash;&gt;-->
+    <!--&lt;!&ndash; Fancybox &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/jquery.fancybox.css?v=2.1.4" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/css/myPivot.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/pivotAgg/pivot.css" />-->
+
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jquery.min.css" />-->
+
+    <!--&lt;!&ndash; jquery.rangeslider (SEARCH) &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />-->
+
+    <!--&lt;!&ndash; Tiled-Analysis &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />-->
+    <!--<link href='//fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>-->
+    <!--<link rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery.power.tip/1.1.0/jquery.powertip.css" type="text/css" />-->
+    <!--<link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.css" />-->
+    <!--<link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet.css" />-->
+    <!--<link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>-->
+    <!--<link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>-->
+
+
+    <!--&lt;!&ndash; JQWidgets &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>-->
+
+    <!--&lt;!&ndash; Analysis &ndash;&gt;-->
+    <!--&lt;!&ndash;<link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash; FAOSTAT CSS &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />-->
+    <!--<link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+
+
+    <!--<link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />-->
+    <!--<link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />-->
+    <!--<link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />-->
+
+
+
+    <!--<title>FAOSTAT</title>-->
+    <!--<link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>-->
+    <!--<link href='//fenixapps.fao.org/repository/fonts/roboto/roboto-main.css' rel='stylesheet' type='text/css'>-->
+
+    <!--&lt;!&ndash; Download Pivot &ndash;&gt;-->
+    <!--&lt;!&ndash; Fancybox &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/jquery.fancybox.css?v=2.1.4" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/css/myPivot.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/pivotAgg/pivot.css" />-->
+
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jquery.min.css" />-->
+
+    <!--&lt;!&ndash; jquery.rangeslider (SEARCH) &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />-->
+
+    <!--&lt;!&ndash; chosen &ndash;&gt;-->
+    <!--&lt;!&ndash; <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'> &ndash;&gt;-->
+
+    <!--&lt;!&ndash; JQWidgets &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>-->
+
+    <!--&lt;!&ndash; Analysis &ndash;&gt;-->
+    <!--&lt;!&ndash;<link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash; FAOSTAT CSS &ndash;&gt;-->
+    <!--<link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />-->
+    <!--<link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+<!--</head>-->
 <body>
 <div class="fs-warning-wrapper">
     <div class="fs-warning">
