@@ -6,6 +6,18 @@
             "S" : "FEBRERO 2015"
         },
         "description":  {
+            "E" : "Government Expenditure to Agriculture and CPI (monthly + regional).",
+            "F" : "D&eacute;penses gouvernementales en agriculture et indice des prix à la consommation (par mois + par r&eacute;gion) en 2015.",
+            "S" : "Gastos del gobierno en  agricultura e &iacute;ndices de precios al consumidor (por mes y por regi&oacute;n) en 2015."
+        }
+    },
+    {
+        "title": {
+            "E" : "FEBRUARY 2015",
+            "F" : "F&Eacute;VRIER 2015",
+            "S" : "FEBRERO 2015"
+        },
+        "description":  {
             "E" : "Complete Production domain update.",
             "F" : "Mise &agrave; jour compl&egrave;te du domaine de production.",
             "S" : "Actualizaci&oacute;n completa del dominio de producci&oacute;n."
@@ -35,4 +47,4 @@
             "S" : "Detalles de actualizaci&oacute;n del comercio de pesticidas y de su uso para el 2012."
         }
     }
-]   
+] 
