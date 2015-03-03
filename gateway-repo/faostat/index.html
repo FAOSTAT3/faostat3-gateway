@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
     <!-- chosen -->
-    <!-- <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'> -->
+    <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'>
 
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>
@@ -365,7 +365,7 @@
             'jshashtable'       : faostat_static + 'common/libs/jshashtable',
 
             // Gateway
-            'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4/FENIXChartsLibrary',
+            'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4.1/FENIXChartsLibrary',
 
             // Home
             'HOME'                               : faostat_static + 'faostat-home-js/faostat-home',
@@ -473,7 +473,8 @@
             ]},
 
             'BROWSE': { deps :[
-                // highcharts
+//                'chosen',
+
                 'highcharts',
                 'highcharts_exporting',
                 'FENIXChartsLibrary',
