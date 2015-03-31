@@ -28,6 +28,12 @@ p {
     padding: 0;
 }
 
+/*JQWIDGET MODIFICATOR*/
+
+.jqx-tree {
+    border: none !important;
+}
+
 .jqx-widget-content {
     color: #666666;
 }
