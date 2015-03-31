@@ -9,7 +9,7 @@ if (!window.CORE) {
          * The base URL is used to load FAOSTAT modules.
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
-        state_prefix : '',
+        state_prefix : 'http://localhost:8080',
         baseURL : 'localhost:8080',
         baseURL_WDS : 'http://faostat3.fao.org/wds',
         datasource : "faostatdb",
@@ -22,15 +22,25 @@ if (!window.CORE) {
 
         lang : null,
 
+        //CONFIG_MES: {
+        //    prefix                  : 'http://faostat3.fao.org/modules/faostat-mes',
+        //    datasource              : 'faostatdb',
+        //    html_structure          : 'http://faostat3.fao.org/modules/faostat-mes/structure.html',
+        //    rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
+        //    rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
+        //    rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
+        //    I18N_URL                : 'http://faostat3.fao.org/static/faostat/I18N/'
+        //},
+
         CONFIG_MES: {
-            prefix                  : 'http://faostat3.fao.org/modules/faostat-mes',
-            datasource              : 'faostatdb',
-            html_structure          : 'http://faostat3.fao.org/modules/faostat-mes/structure.html',
+            prefix                  : 'http://localhost:8080/faostat-mes',
+            url_wds                 : 'http://faostat3.fao.org/wds',
+            //datasource              : 'faostatdb',
+            html_structure          : 'http://localhost:8080/faostat-mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://faostat3.fao.org/static/faostat/I18N/'
-
+            I18N_URL                : 'http://localhost:8080/static/faostat/I18N/'
         },
 
         /**
@@ -89,6 +99,8 @@ if (!window.CORE) {
                     });
                     break;
                 case 'mes':
+                    // this is just a quick fix to query the right datasource
+                    CORE.CONFIG_MES.datasource = CORE.datasource;
                     CORE.CONFIG_MES.sectionCode = CORE.groupCode;
                     CORE.CONFIG_MES.subSectionCode = CORE.domainCode;
                     CORE.CONFIG_MES.lang = CORE.lang;
@@ -135,7 +147,7 @@ if (!window.CORE) {
          * Function linked to the Gateway's menu that load the requested module in the main content.
          */
         loadModule : function(module, group, domain, lang) {
-            var url = 'http://' + CORE.baseURL + '/' + module
+            var url =  CORE.state_prefix + '/' + module
             if (group) url += '/' + group
             if (domain) url += '/' + domain
             if (lang) url += '/' + lang
@@ -266,12 +278,13 @@ if (!window.CORE) {
 
         /** TODO: to be completed **/
         loadModule: function(module, options) {
-            // TODO: move in in CORE.js
-            var url = 'http://' + CORE.baseURL +'/' + module;
+            //var url = 'http://' + CORE.baseURL +'/' + module;
+            var url = CORE.state_prefix +'/' + module;
             if (options) url += '/'+ options
             url += '/' + CORE.lang
             window.location.href = url;
         },
+
 
         contentDIVMinHeight: function() {
             var additional_height = 180
