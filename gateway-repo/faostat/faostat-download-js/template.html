@@ -3,9 +3,7 @@
     <div class="pageTitleCommands">
         <h1 id="_download">Download</h1>
     </div>
-
     <div id="trWizardMode" style="display:none;">
-
         <div id="settings-section" class="settings-section" style="padding: 10px 0px 10px 10px; float: right;">
             <div class="settings-label" id='selection_mode' style="margin-top: 6px; margin-right: 10px; float: left; font-family: verdana; font-size: 12px; font-weight: bold;"></div>
             <img onclick="FAOSTATDownload.showDialog('dialog', 'This features helps the data selection process, but it is resource consuming, therefore the navigation will be slower.')" src="resources/images/information.png" style="margin-top: 6px; margin-right: 10px;"/>
@@ -54,7 +52,7 @@
 
         <div id="optionsArea" style="float: left;"></div>
 
-        <div class='clear'></div>
+        <!--div class='clear'></div>
 
         <div id="testinline"></div>
 
@@ -69,9 +67,26 @@
             <input  type="hidden"name="c" id="c" value="0,1#2,3"/>
             <input  type="hidden" name="option" id="option" value="showChart:0,headingBefore:0,headingAfter:0,headingOutside:1,showchoosedim:0,nbDec:2,subtotals:0,totals:0,calcTotal:1,showFlags:1,showUnits:1,,nestedby:1,showEmpty:0,type:-1" />
             <input type="hidden" name="xml" id="xml" value="">
+        </form-->
+        <div class="fx-olap-holder">
+            <div id="fx-olap-ui"></div>
+            <div id="fx-olap-holder-div"></div>
+            <div id="fx-olap-graph-div"></div>
+            <div id="myGrid1_div"></div>
+            <div id="mesFlags" style="clear:both"></div>
+        </div>
+        <div id="testinline"></div>
+        <!--form id="xlsDataForm" action="http://faostat3.fao.org/faostat-olapws/ExportPOI2" method="POST" -->
+
+        <form id="xlsDataForm" action="/faostat-gateway/go/ExportPOI2" method="POST">
+            <!--textarea id="myJson"  name="myJson" ></textarea-->
+            <input id="myJson"  name="myJson" type="hidden" value="" />
+            <input id="myFlags"  name="myFlags" type="hidden" value='{"data":[{"title":"","label":"Official data"}]}' />
         </form>
 
+
         <div id="METADATA" style="display:none"></div>
+
 
 
         <div id="uvTab" style="background:red 0 50% no-repeat;border:1px solid #FFF;border-bottom:none;-moz-border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;-moz-box-shadow:inset rgba(255,255,255,.25) 1px 1px 1px, rgba(0,0,0,.5) 0 1px 2px;-webkit-box-shadow:inset rgba(255,255,255,.25) 1px 1px 1px, rgba(0,0,0,.5) 0 1px 2px;box-shadow:inset rgba(255,255,255,.25) 1px 1px 1px, rgba(0,0,0,.5) 0 1px 2px;font:normal normal bold 14px/1em Arial, sans-serif;position:fixed;right:10px;bottom:0;z-index:9999;background-color:#AA4643;" class="uv-tab uv-slide-bottom "></div>
