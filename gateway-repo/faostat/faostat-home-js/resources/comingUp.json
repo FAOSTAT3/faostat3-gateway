@@ -1,27 +1,15 @@
 [
     {
         "title": {
-            "E" : "MAY 2012",
-            "F" : "MAI 2012",
-            "S" : "MAYO 2012"
+            "E" : "MAY 2015",
+            "F" : "MAI 2015",
+            "S" : "MAYO 2015"
         },
         "description":  {
-            "E" : "Trade data update.",
-            "F" : "Mise à jour des données commerciales.",
-            "S" : "Actualización de datos comerciales."
+            "E" : "Trade data update (2012).",
+            "F" : "Mise à jour des données commerciales (2012).",
+            "S" : "Actualización de datos comerciales (2012)."
         	}
-    },
-    {
-        "title": {
-            "E" : "APRIL 2011",
-            "F" : "AVRIL 2011",
-            "S" : "ABRIL 2011"
-        },
-        "description":  {
-            "E" : "GHG, Energy use update.",
-            "F" : "Emissions de gaz de serre, mise à jour de la consommation en énergie",
-            "S" : "Emisiones de gases de efecto invernadero, actualización de consumo de energia."
-        }
     },
     {
         "title": {
