@@ -95,7 +95,13 @@ if (!window.CORE) {
                 //    break;
                 case 'analysis':
                     require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({'lang': obj.lang, 'lang_iso2': obj.lang_iso2}, null);
+                        TILESMGR.init({
+                                'datasource': CORE.datasource,
+                                'lang': obj.lang,
+                                'lang_iso2': obj.lang_iso2,
+                                'section': obj.section,
+                                'module': obj.code
+                            });
                     });
                     break;
                 case 'mes':
