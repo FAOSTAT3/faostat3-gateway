@@ -179,6 +179,20 @@ class FAOSTATGatewayRESTService {
     /** analysis **/
     @GET
     @Produces(MediaType.TEXT_HTML)
+    @Path("analysis/{lang}")
+    public String loadAnalysis(@PathParam("lang") String lang) {
+        loadDefaultModule('analysis', lang)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("analysis/{section}/{lang}")
+    public String loadAnalysisSectionLang(@PathParam("lang") String lang, @PathParam("section") String section) {
+        loadDefaultModule('analysis', lang, section)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
     @Path("analysis/{section}/{code}/{lang}")
     public String loadAnalysisSectionCodeLang(@PathParam("lang") String lang, @PathParam("section") String section, @PathParam("code") String code) {
         loadDefaultModule('analysis', lang, section, code)
