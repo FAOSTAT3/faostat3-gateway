@@ -716,6 +716,38 @@ input {
     .fs-domain-lastbtn span:hover {
       text-decoration: underline; }
 
+/* faostat jstree  style */
+/* Fenix - Js tree */
+.jstree-container-ul {
+  max-width: 100%; }
+
+.jstree-default .jstree-search {
+  color: #666;
+  font-weight: 300;
+  font-style: normal; }
+
+.jstree-default .jstree-themeicon {
+  display: none;
+  /* It hides folder icon */ }
+
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon {
+  background-image: url("images/jstree/treejs-32px.png"); }
+
+.jstree-default .jstree-wholerow-clicked {
+  background: none;
+  background-color: #e8e8e8; }
+
+.jstree-default .jstree-wholerow-hovered {
+  background: none;
+  background-color: #e8e8e8; }
+
+/* this is done for the geospatial component */
+.fs-tree-holder-geospatial {
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
 /* DOMAIN ICONS */
 .fs-domain, .fs-domain-prod, .fs-domain-emiag, .fs-domain-pric, .fs-domain-popu, .fs-domain-trade, .fs-domain-emilu, .fs-domain-reso, .fs-domain-fores, .fs-domain-foodsec, .fs-domain-foodsup, .fs-domain-inves, .fs-domain-asti, .fs-domain-fbs, .fs-domain-commbal, .fs-domain-agriind, .fs-domain-emerg {
   height: 70px;

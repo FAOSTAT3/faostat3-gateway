@@ -1,0 +1,49 @@
+/* Fenix - Js tree */
+
+
+.jstree-container-ul{
+  max-width: 100%;
+  //max-height: 400px;
+  //overflow-y: scroll;
+  //overflow-x: hidden;
+}
+
+
+.jstree-default {
+
+  .jstree-search{
+    color: #666;
+    font-weight: 300;
+    font-style: normal;
+  }
+}
+
+.jstree-default .jstree-themeicon{
+  display: none; /* It hides folder icon */
+}
+
+.jstree-default .jstree-node,
+.jstree-default .jstree-icon{
+  background-image: url("images/jstree/treejs-32px.png");
+}
+
+.jstree-default .jstree-wholerow-clicked{
+  background: none;
+  background-color: #e8e8e8;
+}
+
+.jstree-default .jstree-wholerow-hovered{
+  background: none;
+  background-color: #e8e8e8;
+}
+
+.jstree-default > .jstree-wholerow-ul .jstree-hovered, .jstree-default > .jstree-wholerow-ul .jstree-clicked {
+
+}
+
+/* this is done for the geospatial component */
+.fs-tree-holder-geospatial {
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

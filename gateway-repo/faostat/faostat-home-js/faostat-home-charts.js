@@ -183,7 +183,7 @@ var FS_HOME_CHART = (function() {
                     style: {
                         color: '#666666',
                         fontWeight: '300',
-                        fontSize: 12
+                        fontSize: 10
                     }
                 }
             },
