@@ -9,6 +9,14 @@
     <link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='//fenixapps.fao.org/repository/fonts/roboto/roboto-main.css' rel='stylesheet' type='text/css'>
 
+    <!-- jstree css -->
+    <link href='http://fenixapps.fao.org/repository/js/jstree/3.0.8/dist/themes/default/style.min.css' rel='stylesheet'>
+
+    <!-- sweetAlert -->
+    <link href='http://fenixapps.fao.org/repository/js/jstree/3.0.8/dist/themes/default/style.min.css' rel='stylesheet'>
+
+    <link href='http://fenixapps.fao.org/repository/js/sweet-alert/0.4.2/sweet-alert.css' rel='stylesheet'>
+
     <!-- Fancybox -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
@@ -39,8 +47,6 @@
     <!-- FAOSTAT CSS -->
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />
-    <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 
     <!-- Tiled-Analysis -->
     <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />
@@ -49,7 +55,7 @@
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.css" />
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet.css" />
     <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
-    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='http://fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css' rel='stylesheet'>
     <link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
 
     <!-- GHG style -->
@@ -145,7 +151,7 @@
                     </span>
             <span onclick="CORE.loadModule('compare', null);" id="compare"></span>
             <span onclick="CORE.loadModule('search', '*');" id="search"></span>
-            <span onclick="CORE.loadModule('analysis', 'Q/QC');" id="analysis"></span>
+            <span onclick="CORE.loadModule('analysis');" id="analysis"></span>
             <span onclick="CORE.loadModule('mes', 'methodology_list');" id="mes"></span>
         </div>
         <form style="display:true" id="searchFS" method="get">
@@ -289,17 +295,21 @@ require.config({
         'i18n': faostat_static + 'common/libs/i18n',
 
         // new analysis stuff (TODO: add to the CDN!)
-        'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
+        'mustache':  repository + 'mustache/2.0.0/mustache.min',
+        'handlebars': repository + 'handlebars/2.0.0/handlebars',
         'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
         'chosen': repository + 'chosen/1.2.0/chosen.jquery.min',
 
+        'jstree': repository + 'jstree/3.0.8/dist/jstree.min',
+        'sweetAlert': repository + 'sweet-alert/0.4.2/sweet-alert',
+
         // fenix-map-js
-        'import-dependencies'   :   '//fenixapps.fao.org/repository/js/FENIX/utils/import-dependencies-1.0',
-        'leaflet'               :   '//fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet',
-        'jquery.power.tip'      :   '//fenixapps.fao.org/repository/js/jquery.power.tip/1.1.0/jquery.powertip.min',
-        'jquery-ui'             :   '//fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
-        'jquery.i18n.properties':   '//fenixapps.fao.org/repository/js/jquery/1.0.9/jquery.i18n.properties-min',
-        'jquery.hoverIntent'    :   '//fenixapps.fao.org/repository/js/jquery.hoverIntent/1.0/jquery.hoverIntent',
+        'import-dependencies'   :   repository + 'FENIX/utils/import-dependencies-1.0',
+        'leaflet'               :   repository + 'leaflet/0.7.3/leaflet',
+        'jquery.power.tip'      :   repository + 'jquery.power.tip/1.1.0/jquery.powertip.min',
+        'jquery-ui'             :   repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
+        'jquery.i18n.properties':   repository + 'jquery/1.0.9/jquery.i18n.properties-min',
+        'jquery.hoverIntent'    :   repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
         'fenix-map'             :   repository + 'fenix-map-js/ghg_demo/fenix-map-min',
         'fenix-map-config'      :   repository + 'fenix-map-js/ghg_demo/fenix-map-config',
 
@@ -389,11 +399,15 @@ require.config({
         'GEOBRICKS-UI-DISTRIBUTION': fnx_modules + 'geobricks_ui_distribution/distribution',
         geobricks_ui_distribution: fnx_modules + 'geobricks_ui_distribution',
 
+        // GHG Spatial Distribution
+        'FAOSTAT-UI-ANALYSIS-GHG-SPATIAL-DOWNLOAD': fnx_modules + 'faostat-ui-analysis-ghg-spatial-download/js/main',
+        'faostat-ui-analysis-ghg-spatial-download': fnx_modules + 'faostat-ui-analysis-ghg-spatial-download'
+
         // Old analysis
-        'FAOSTAT_ANALYSIS' 			: 'faostat-analysis-js/js/faostat-analysis',
-        'FAOSTAT_ANALYSIS_COLLECTOR' 		: 'faostat-analysis-js/js/faostat-analysis-collector',
-        'FAOSTAT_ANALYSIS_WDS_CLIENT'     	: 'faostat-analysis-js/js/wds-client',
-        'FAOSTAT_ANALYSIS_GOOGLE_ANALYTICS'     : 'faostat-analysis-js/js/google-analytics-manager',
+//        'FAOSTAT_ANALYSIS' 			: 'faostat-analysis-js/js/faostat-analysis',
+//        'FAOSTAT_ANALYSIS_COLLECTOR' 		: 'faostat-analysis-js/js/faostat-analysis-collector',
+//        'FAOSTAT_ANALYSIS_WDS_CLIENT'     	: 'faostat-analysis-js/js/wds-client',
+//        'FAOSTAT_ANALYSIS_GOOGLE_ANALYTICS'     : 'faostat-analysis-js/js/google-analytics-manager',
     },
 
     shim: {
