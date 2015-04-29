@@ -94,14 +94,67 @@ if (!window.CORE) {
                 //    });
                 //    break;
                 case 'analysis':
-                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({
-                                'datasource': CORE.datasource,
-                                'lang': obj.lang,
-                                'lang_iso2': obj.lang_iso2,
-                                'section': obj.section,
-                                'module': obj.code
+                    //require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
+                    //    TILESMGR.init({
+                    //            'datasource': CORE.datasource,
+                    //            'lang': obj.lang,
+                    //            'lang_iso2': obj.lang_iso2,
+                    //            'section': obj.section,
+                    //            'module': obj.code
+                    //        });
+                    //});
+                    require(['FENIX_UI_TILE_MANAGER'], function (TILES_MANAGER) {
+                        var tiles_manager = new TILES_MANAGER();
+                        //tiles_manager.init({
+                        //    'datasource': CORE.datasource,
+                        //    'lang': obj.lang,
+                        //    'lang_iso2': obj.lang_iso2,
+                        //    'section': obj.section,
+                        //    'module': obj.code
+                        //});
+
+                        tiles_manager.init({
+                            lang: obj.lang,
+                            lang_faostat: obj.lang,
+                            module: obj.code,
+                            datasource: CORE.datasource,
+                            placeholder_id: 'container',
+                            section: obj.section != null ? obj.section : 'statistical_analysis'
+                        });
+
+                        tiles_manager.onTileClick(function(section, module) {
+
+                            /* Fetch RequireJS module's ID. */
+                            var id = tiles_manager.CONFIG.tiles_configuration[section + '_' + module].require;
+
+                            /* Load module. */
+                            require([id], function (MODULE) {
+                                //var module = new MODULE();
+                                //MODULE.init({
+                                //    'lang': obj.lang
+                                //});
+
+                                if (module == 'ANALYSIS_GHG_QA_QC') {
+                                    MODULE.init({
+                                        'lang': obj.lang
+                                    });
+                                } else {
+                                    // TODO: remove it. This is done to handle geobricks_ui_distribution
+                                    var m = MODULE;
+                                    var config = $.extend(true, {}, tiles_manager.CONFIG.tiles_configuration['ghg_' + module]["module_config"],
+                                        {
+                                            'placeholder': 'container',
+                                            'lang': obj.lang
+                                        }
+                                    );
+                                    m.init(config);
+                                }
+
+
                             });
+
+                        });
+
                     });
                     break;
                 case 'mes':
