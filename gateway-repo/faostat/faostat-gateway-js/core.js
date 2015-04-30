@@ -125,6 +125,8 @@ if (!window.CORE) {
                         tiles_manager.onTileClick(function(section, module) {
 
                             /* Fetch RequireJS module's ID. */
+                            console.log(section);
+                            console.log(module);
                             var id = tiles_manager.CONFIG.tiles_configuration[section + '_' + module].require;
 
                             /* Load module. */
@@ -140,13 +142,14 @@ if (!window.CORE) {
                                     });
                                 } else {
                                     // TODO: remove it. This is done to handle geobricks_ui_distribution
-                                    var m = MODULE;
-                                    var config = $.extend(true, {}, tiles_manager.CONFIG.tiles_configuration['ghg_' + module]["module_config"],
+                                    var m = new MODULE();
+                                    var config = $.extend(true, {}, tiles_manager.CONFIG.tiles_configuration[section + '_' + module]["module_config"],
                                         {
                                             'placeholder': 'container',
                                             'lang': obj.lang
                                         }
                                     );
+                                    console.log(m);
                                     m.init(config);
                                 }
 
