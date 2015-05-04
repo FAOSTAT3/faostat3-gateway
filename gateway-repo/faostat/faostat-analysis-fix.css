@@ -721,6 +721,9 @@ input {
 .jstree-container-ul {
   max-width: 100%; }
 
+.jstree-anchor {
+  color: #666666 !important; }
+
 .jstree-default .jstree-search {
   color: #666;
   font-weight: 300;
