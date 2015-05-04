@@ -2600,30 +2600,30 @@ div.obj-box-download:nth-child(even) {
     /*border-radius: 4px;*/
 /*}*/
 
-.btn.dwld {
+.fs-btn.dwld {
     height: 26px;
     padding: 4px 7px 0 5px;
     margin-left: 10px;
 }
 
-.btn .fa {
+.fs-btn .fa {
     font-size: 16px;
     color: #666666;
     margin-right: 5px;
 }
 
-.btn .btnText{
+.fs-btn .btnText{
     padding-top: 0;
     position: relative;
     top: -2px;
 }
 
-.btn:hover,
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn.disabled,
-.btn[disabled] {
+.fs-btn:hover,
+.fs-btn:focus,
+.fs-btn:active,
+.fs-btn.active,
+.fs-btn.disabled,
+.fs-btn[disabled] {
     background-color: #e6e6e6;
     *background-color: #d9d9d9;
 }
@@ -2634,8 +2634,8 @@ div.obj-box-download:nth-child(even) {
 }
 
 
-.btn:hover,
-.btn:focus {
+.fs-btn:hover,
+.fs-btn:focus {
     text-decoration: none;
     background-position: 0 -15px;
     -webkit-transition: background-position 0.1s linear;

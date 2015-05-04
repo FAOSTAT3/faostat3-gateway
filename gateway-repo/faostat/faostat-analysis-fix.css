@@ -747,7 +747,7 @@ input {
 
 /* this is done for the geospatial component */
 .fs-tree-holder-geospatial {
-  max-height: 400px;
+  max-height: 550px;
   overflow-y: scroll;
   overflow-x: hidden; }
 
