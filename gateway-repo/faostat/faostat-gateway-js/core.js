@@ -60,6 +60,15 @@ if (!window.CORE) {
             CORE.domainCode = obj.code;
             CORE.lang = obj.lang;
 
+            /* Set language for RequireJS. */
+            require.config({'locale': obj.lang});
+            var locale = localStorage.getItem('locale');
+            localStorage.setItem('locale', obj.lang);
+            if (locale != obj.lang) {
+                localStorage.setItem('locale', obj.lang);
+                location.reload();
+            }
+
             // Call the init method of the module
             switch (module) {
                 case 'home':
@@ -125,8 +134,6 @@ if (!window.CORE) {
                         tiles_manager.onTileClick(function(section, module) {
 
                             /* Fetch RequireJS module's ID. */
-                            console.log(section);
-                            console.log(module);
                             var id = tiles_manager.CONFIG.tiles_configuration[section + '_' + module].require;
 
                             /* Load module. */
@@ -149,7 +156,6 @@ if (!window.CORE) {
                                             'lang': obj.lang
                                         }
                                     );
-                                    console.log(m);
                                     m.init(config);
                                 }
 
