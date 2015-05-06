@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* This file is created to fix certain bug in Fenix home. Please Review. The classes should be overwritten on the original CSS file (i.e faostat-home.scss) */
 /* FAOSTAT Sprites */
 /* FAOSTAT Mixin */
@@ -124,68 +123,6 @@ input {
   padding-left: 5px !important; }
 
 /* TOOLTIP */
-#powerTip {
-  background-color: rgba(64, 118, 158, 0.9);
-  border-radius: 3px;
-  color: white;
-  cursor: default;
-  display: none;
-  padding: 10px;
-  position: absolute;
-  /*white-space: nowrap; Rimettere se c'è qualche problema */
-  z-index: 2;
-  max-width: 150px; }
-
-#powerTip.n:before, #powerTip.e:before, #powerTip.s:before, #powerTip.w:before, #powerTip.ne:before, #powerTip.nw:before, #powerTip.se:before, #powerTip.sw:before {
-  content: "";
-  position: absolute; }
-
-#powerTip.n:before, #powerTip.s:before {
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  left: 50%;
-  margin-left: -5px; }
-
-#powerTip.e:before, #powerTip.w:before {
-  border-bottom: 5px solid transparent;
-  border-top: 5px solid transparent;
-  margin-top: -5px;
-  top: 50%; }
-
-#powerTip.n:before {
-  border-top: 10px solid rgba(64, 118, 158, 0.9);
-  bottom: -10px; }
-
-#powerTip.e:before {
-  border-right: 10px solid rgba(64, 118, 158, 0.9);
-  left: -10px; }
-
-#powerTip.s:before {
-  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
-  top: -10px; }
-
-#powerTip.w:before {
-  border-left: 10px solid rgba(64, 118, 158, 0.9);
-  right: -10px; }
-
-#powerTip.ne:before, #powerTip.se:before {
-  border-left: 0 none;
-  border-right: 10px solid transparent;
-  left: 10px; }
-
-#powerTip.nw:before, #powerTip.sw:before {
-  border-left: 10px solid transparent;
-  border-right: 0 none;
-  right: 10px; }
-
-#powerTip.ne:before, #powerTip.nw:before {
-  border-top: 10px solid rgba(64, 118, 158, 0.9);
-  bottom: -10px; }
-
-#powerTip.se:before, #powerTip.sw:before {
-  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
-  top: -10px; }
-
 /* FAOSTAT - Modal */
 .md-perspective,
 .md-perspective body {
@@ -1149,3 +1086,6 @@ input {
     cursor: pointer; }
     .fs-domain-lastbtn span:hover {
       text-decoration: underline; }
+
+#powerTip {
+  z-index: 1000; }
