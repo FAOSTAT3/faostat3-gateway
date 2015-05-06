@@ -13,8 +13,6 @@
     <link href='http://fenixapps.fao.org/repository/js/jstree/3.0.8/dist/themes/default/style.min.css' rel='stylesheet'>
 
     <!-- sweetAlert -->
-    <link href='http://fenixapps.fao.org/repository/js/jstree/3.0.8/dist/themes/default/style.min.css' rel='stylesheet'>
-
     <link href='http://fenixapps.fao.org/repository/js/sweet-alert/0.4.2/sweet-alert.css' rel='stylesheet'>
 
     <!-- Fancybox -->
@@ -35,14 +33,8 @@
     <!-- jquery.rangeslider (SEARCH) -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
-    <!-- chosen -->
-    <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'>
-
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>
-
-    <!-- Analysis -->
-    <!--<link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />-->
 
     <!-- FAOSTAT CSS -->
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />
@@ -51,17 +43,15 @@
     <!-- Tiled-Analysis -->
     <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />
     <link href='//fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery.power.tip/1.1.0/jquery.powertip.css" type="text/css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery.power.tip/1.2.0/css/jquery.powertip.css" type="text/css" />
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.css" />
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet.css" />
     <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='http://fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css' rel='stylesheet'>
-    <link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
 
     <!-- GHG style -->
     <link type="text/css" rel="stylesheet" href="/tiled-analysis/css/analysis.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-ui-map/ghg_demo/fenix-ui-map.min.css" />
     <link rel="stylesheet" href="/static/faostat/faostat-analysis-fix.css" />
 </head>
 <body>
@@ -285,7 +275,7 @@ require.config({
 
     paths: {
 //            TODO: remove it because it's already imported
-        'jquery': '//fenixapps.fao.org/cdn/faostat3/jquery.min',
+        'jquery':  repository + 'jquery/1.9.1/jquery.min',
 
         'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
         'highcharts_exporting' : repository + 'highcharts/4.0.4/js/modules/exporting',
@@ -307,12 +297,12 @@ require.config({
         // fenix-map-js
         'import-dependencies'   :   repository + 'FENIX/utils/import-dependencies-1.0',
         'leaflet'               :   repository + 'leaflet/0.7.3/leaflet',
-        'jquery.power.tip'      :   repository + 'jquery.power.tip/1.1.0/jquery.powertip.min',
+        'jquery.power.tip'      :   repository + 'jquery.power.tip/1.2.0/jquery.powertip',
         'jquery-ui'             :   repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
         'jquery.i18n.properties':   repository + 'jquery/1.0.9/jquery.i18n.properties-min',
         'jquery.hoverIntent'    :   repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
-        'fenix-map'             :   repository + 'fenix-map-js/ghg_demo/fenix-map-min',
-        'fenix-map-config'      :   repository + 'fenix-map-js/ghg_demo/fenix-map-config',
+        'fenix-map'             :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.src',
+        'fenix-map-config'      :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map-config',
 
         // jshashtable
         'jshashtable'       : faostat_static + 'common/libs/jshashtable',
@@ -517,8 +507,10 @@ require.config({
 //                    'jquery',
                 'leaflet',
 //                    'jquery-ui',
-                'fenix-map-config', 'import-dependencies',
-                'jquery.power.tip', 'jquery.i18n.properties',
+                'fenix-map-config',
+                'import-dependencies',
+                //'jquery.power.tip',
+                //'jquery.i18n.properties',
                 'jquery.hoverIntent', 'chosen']
         }
     }
