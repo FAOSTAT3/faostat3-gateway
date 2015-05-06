@@ -115,9 +115,6 @@ if (!window.CORE) {
                             module: obj.code
                         });
 
-                        console.log(obj);
-
-
                         tiles_manager.onTileClick(function(section, module) {
 
                             // upgrading url
