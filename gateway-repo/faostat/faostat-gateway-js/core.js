@@ -105,15 +105,40 @@ if (!window.CORE) {
                 case 'analysis':
                     require(['FENIX_UI_TILE_MANAGER'], function (TILES_MANAGER) {
                         var tiles_manager = new TILES_MANAGER();
+                        
+                        var module = obj.code;
+                        var section = obj.section || 'ghg';
 
-                        tiles_manager.init({
-                            lang: obj.lang,
-                            lang_faostat: obj.lang,
-                            datasource: CORE.datasource,
-                            placeholder_id: 'container',
-                            section: obj.section != null ? obj.section : 'ghg',
-                            module: obj.code
-                        });
+                        if (!module && section) {
+                            tiles_manager.init({
+                                lang: obj.lang,
+                                lang_faostat: obj.lang,
+                                datasource: CORE.datasource,
+                                placeholder_id: 'container',
+                                section: obj.section != null ? obj.section : 'ghg',
+                                module: obj.code
+                            });
+                        }
+                        else {
+                            var tile = tiles_manager.CONFIG.tiles_configuration[section + '_' + module];
+
+                            /* Fetch RequireJS module's ID. */
+                            var id = tile.require;
+
+                            /* Load module. */
+                            require([id], function (MODULE) {
+                                var m = new MODULE();
+                                var config = $.extend(true, {}, tile["module_config"],
+                                    {
+                                        'placeholder': 'container',
+                                        'lang': obj.lang
+                                    }
+                                );
+                                m.init(config);
+
+                            });
+
+                        }
 
                         tiles_manager.onTileClick(function(section, module) {
 
