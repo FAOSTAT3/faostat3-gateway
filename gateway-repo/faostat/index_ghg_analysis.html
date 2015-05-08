@@ -274,7 +274,7 @@ require.config({
     baseUrl: '//localhost:8080/',
 
     paths: {
-//            TODO: remove it because it's already imported
+//       TODO: remove it because it's already imported (but some libraries need it)
         'jquery':  repository + 'jquery/1.9.1/jquery.min',
 
         'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
@@ -301,7 +301,7 @@ require.config({
         'jquery-ui'             :   repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
         'jquery.i18n.properties':   repository + 'jquery/1.0.9/jquery.i18n.properties-min',
         'jquery.hoverIntent'    :   repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
-        'fenix-map'             :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.src',
+        'fenix-map'             :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.min',
         'fenix-map-config'      :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map-config',
 
         // jshashtable
@@ -409,11 +409,15 @@ require.config({
         'FENIXChartsLibrary': ['highcharts'],
 
         // new analysis stuff TODO: move to the CND with grunt
-        //'bootstrap': ['jquery'],
+//        'handlebars': ['jquery'],
+//        'jstree': ['jquery'],
+//        'highcharts': ['jquery'],
+//        'bootstrap': ['jquery'],
         //'chosen': ['jquery'],
+//        'amplify': ['amplify'],
 
         'underscore': {
-            //  deps :['jquery'],
+            deps :['jquery'],
             exports: '_'
         },
 
