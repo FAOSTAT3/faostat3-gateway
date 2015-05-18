@@ -4,7 +4,6 @@ if (!window.CORE) {
 
         timestamps : [],
 
-
         /**
          * The base URL is used to load FAOSTAT modules.
          */
@@ -12,8 +11,8 @@ if (!window.CORE) {
         state_prefix : 'http://localhost:8080',
         baseURL : 'localhost:8080',
         baseURL_WDS : 'http://faostat3.fao.org/wds',
+        baseURL_WDS5 : 'http://fenixapps2.fao.org/wds_5/rest',
         datasource : "faostatdb",
-
         groupCode : null,
 
         domainCode : null,
@@ -105,7 +104,7 @@ if (!window.CORE) {
                 case 'analysis':
                     require(['FENIX_UI_TILE_MANAGER'], function (TILES_MANAGER) {
                         var tiles_manager = new TILES_MANAGER();
-                        
+
                         var module = obj.code;
                         var section = obj.section || 'ghg';
 
@@ -116,7 +115,8 @@ if (!window.CORE) {
                                 datasource: CORE.datasource,
                                 placeholder_id: 'container',
                                 section: obj.section != null ? obj.section : 'ghg',
-                                module: obj.code
+                                module: obj.code,
+                                url_wds: CORE.baseURL_WDS5
                             });
                         }
                         else {
@@ -132,7 +132,8 @@ if (!window.CORE) {
                                     {
                                         'placeholder': 'container',
                                         'placeholder_id': 'container',
-                                        'lang': obj.lang
+                                        'lang': obj.lang,
+                                        'url_wds': CORE.baseURL_WDS5
                                     }
                                 );
                                 m.init(config);
@@ -157,7 +158,9 @@ if (!window.CORE) {
                                 var config = $.extend(true, {}, tile["module_config"],
                                     {
                                         'placeholder': 'container',
-                                        'lang': obj.lang
+                                        'placeholder_id': 'container',
+                                        'lang': obj.lang,
+                                        'url_wds': CORE.baseURL_WDS5
                                     }
                                 );
                                 m.init(config);
