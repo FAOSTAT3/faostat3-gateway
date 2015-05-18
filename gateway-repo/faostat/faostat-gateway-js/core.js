@@ -131,6 +131,7 @@ if (!window.CORE) {
                                 var config = $.extend(true, {}, tile["module_config"],
                                     {
                                         'placeholder': 'container',
+                                        'placeholder_id': 'container',
                                         'lang': obj.lang
                                     }
                                 );
