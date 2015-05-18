@@ -2,44 +2,7 @@ if (!window.FAOSTATGateway) {
 
     window.FAOSTATGateway = {
 
-        /**
-         * This map is used to avoid modules libraries to be loaded more than once.
-         */
-        //loadUI : function(module, groupCode, domainCode, lang) {
-/*        loadUI : function(obj) {
-            console.log(CORE.baseURL + "/static/faostat/common/config.js");
-            CORE.lang = obj.lang;
-            require(["//" + CORE.baseURL + "/static/faostat/common/config.js"], function () {
-                console.log("here");
-//                require(["FAOSTAT3"], function () {
-                    require.config({"locale": obj.lang.toUpperCase()});
-                    FAOSTATGateway._loadUI(obj);
-//                });
-            });
-        },*/
-
-        _loadHistoryJS: function() {
-            if ( CORE.testHTML5() ) {
-                // Establish Variables
-                var History = window.History; // Note: We are using a capital H instead of a lower h
-                var State = History.getState();
-                // Bind to State Change
-                History.Adapter.bind(window, 'statechange ', function () { // Note: We are using statechange instead of popstate
-                    // Log the State
-                    var State = History.getState(); // Note: We are using History.getState() instead of event.state
-                    if (State.data.timestamp in CORE.timestamps) {
-                        // Deleting the unique timestamp associated with the state
-                        delete CORE.timestamps[State.data.timestamp];
-                    }
-                    else {
-                        // Manage Back/Forward button here
-                        CORE.reloadModule(CORE.lang)
-                    }
-                });
-            }
-        },
-
-        _loadUI: function(obj) {
+        loadUI: function(obj) {
 
             var module = obj.module;
             var lang = obj.lang;
@@ -75,6 +38,27 @@ if (!window.FAOSTATGateway) {
                 activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
                 zIndex: 2147483647 // Z-Index for the overlay
             });
+        },
+
+        _loadHistoryJS: function() {
+            if ( CORE.testHTML5() ) {
+                // Establish Variables
+                var History = window.History; // Note: We are using a capital H instead of a lower h
+                var State = History.getState();
+                // Bind to State Change
+                History.Adapter.bind(window, 'statechange ', function () { // Note: We are using statechange instead of popstate
+                    // Log the State
+                    var State = History.getState(); // Note: We are using History.getState() instead of event.state
+                    if (State.data.timestamp in CORE.timestamps) {
+                        // Deleting the unique timestamp associated with the state
+                        delete CORE.timestamps[State.data.timestamp];
+                    }
+                    else {
+                        // Manage Back/Forward button here
+                        CORE.reloadModule(CORE.lang)
+                    }
+                });
+            }
         },
 
         _loadListeners: function() {
