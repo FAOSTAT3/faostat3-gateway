@@ -51,6 +51,9 @@
 
     <!-- GHG style -->
     <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/tiled-analysis/css/analysis.css" />
+
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/tiled-analysis/submodules/faostat-ui-analysis-ghg-qaqc/css/faostat-ui-analysis-ghg-qaqc.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/tiled-analysis/submodules/faostat-ui-wide-tables/css/faostat-ui-wide-tables.css" />
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-ui-map/ghg_demo/fenix-ui-map.min.css" />
     <link rel="stylesheet" href="/faostat-ghg/static/faostat/faostat-analysis-fix.css" />
 </head>
@@ -249,13 +252,11 @@
 </div>
 
 <!-- Scripts -->
-<script src="//fenixapps.fao.org/cdn/faostat3/jquery.min.js"></script>
-<script src="//fenixapps.fao.org/cdn/faostat3/jqwidgets/jqwidgets.min.js"></script>
-<!-- added missing dependency made with grunt -->
-<script src="//fenixapps.fao.org/cdn/faostat3/jqwidgets/jqxdata.export.js"></script>
-<script src="/faostat-ghg/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
-<script src="/faostat-ghg/static/faostat/faostat-gateway-js/core.js"></script>
-<script src="/faostat-ghg/static/faostat/faostat-gateway-js/UIUtils.js"></script>
+<!--<script src="//fenixapps.fao.org/cdn/faostat3/jquery.min.js"></script>-->
+
+<!--<script src="/faostat-ghg/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>-->
+<!--<script src="/faostat-ghg/static/faostat/faostat-gateway-js/core.js"></script>-->
+<!--<script src="/faostat-ghg/static/faostat/faostat-gateway-js/UIUtils.js"></script>-->
 
 <!-- Require-js -->
 <script src='//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.js'></script>
@@ -265,17 +266,20 @@
     var repository = '//fenixapps.fao.org/repository/js/';
     var faostat_static = '//fenixapps2.fao.org/faostat-ghg/static/faostat/';
     var fnx_modules = '//fenixapps2.fao.org/faostat-ghg/static/faostat/modules/';
+    var cdn = '//fenixapps.fao.org/cdn/faostat3/';
+    var baseUrl = '//fenixapps2.fao.org/faostat-ghg/modules/';
 
     require.config({
 
-        waitSeconds: 60,
+        waitSeconds: 30,
 
         /* BASE URL of the modules */
-        baseUrl: '//fenixapps2.fao.org/faostat-ghg/modules/',
+        baseUrl: baseUrl,
 
         paths: {
-//            TODO: remove it because it's already imported
-            'jquery':  repository + 'jquery/1.9.1/jquery.min',
+            'jquery':  repository + 'jquery/1.10.2/jquery-1.10.2.min',
+            'jqwidgets-all': cdn + 'jqwidgets/jqwidgets.min',
+            'jqwidgets-plugins': cdn + 'jqwidgets/jqxdata.export',
 
             'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
             'highcharts_exporting' : repository + 'highcharts/4.0.4/js/modules/exporting',
@@ -293,27 +297,41 @@
             'jstree': repository + 'jstree/3.0.8/dist/jstree.min',
             'sweetAlert': repository + 'sweet-alert/0.4.2/sweet-alert',
             'amplify' : repository + 'amplify/1.1.2/amplify.min',
+            underscore: repository + 'underscore/1.8.0/underscore.min',
 
             // fenix-map-js
-            'import-dependencies'   :   repository + 'FENIX/utils/import-dependencies-1.0',
-            'leaflet'               :   repository + 'leaflet/0.7.3/leaflet',
-            'jquery.power.tip'      :   repository + 'jquery.power.tip/1.2.0/jquery.powertip',
-            'jquery-ui'             :   repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
-            'jquery.i18n.properties':   repository + 'jquery/1.0.9/jquery.i18n.properties-min',
-            'jquery.hoverIntent'    :   repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
-            'fenix-map'             :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.src',
+            'import-dependencies'   : repository + 'FENIX/utils/import-dependencies-1.0',
+            'leaflet'               : repository + 'leaflet/0.7.3/leaflet',
+            'jquery.power.tip'      : repository + 'jquery.power.tip/1.2.0/jquery.powertip',
+            'jquery-ui'             : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
+            'jquery.i18n.properties': repository + 'jquery/1.0.9/jquery.i18n.properties-min',
+            'jquery.hoverIntent'    : repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
+            'fenix-map'             : repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.min',
+            'jquery.chromatable'    : repository + 'jquery.chromatable/1.3.0/jquery.chromatable',
+            'jquery.mousewheel'     : repository + 'jquery.mousewheel/1.0/jquery-mousewheel',
+            'jquery.fancybox'       : repository + 'jquery.fancybox/2.1.4/source/jquery.fancybox',
+            'jquery.history'        : repository + 'jquery.history/jquery.history',
+            'jquery.sticky'         : repository + 'stickyjs/1.0.0/jquery.sticky',
+            'jquery.scrollUp'       : repository + 'scrollup/2.3.3/js/jquery.scrollUp.min',
+            'jQRangeSlider'         : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
+
+
+
             'fenix-map-config'      :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map-config',
 
             // jshashtable
-            'jshashtable'       : faostat_static + 'common/libs/jshashtable',
+            'jshashtable': faostat_static + 'common/libs/jshashtable',
 
             // Gateway
-            'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4.1/FENIXChartsLibrary',
+            'FENIXChartsLibrary': repository + 'FENIXChartsLibrary/0.4.1/FENIXChartsLibrary',
+            'FAOSTAT_GATEWAY': faostat_static + 'faostat-gateway-js/faostat-gateway-js',
+            'FAOSTAT_CORE': faostat_static + 'faostat-gateway-js/core',
+            'FAOSTAT_UIUtils': faostat_static + 'faostat-gateway-js/UIUtils',
 
             // Home
-            'HOME'                               : faostat_static + 'faostat-home-js/faostat-home',
-            'HOME_faostat-home-charts'           : faostat_static + 'faostat-home-js/faostat-home-charts',
-            'HOME_faostat-home-database-updates' : faostat_static + 'faostat-home-js/database-updates',
+            'HOME': faostat_static + 'faostat-home-js/faostat-home',
+            'HOME_faostat-home-charts': faostat_static + 'faostat-home-js/faostat-home-charts',
+            'HOME_faostat-home-database-updates': faostat_static + 'faostat-home-js/database-updates',
 
             // Browse
             'BROWSE'                          : 'faostat-browse-js/js/faostat-browse',
@@ -389,6 +407,13 @@
             'F3_CHART'              : 'tiled-analysis/js/commons/f3-chart',
             'F3_GHG_TABLE'          : 'tiled-analysis/js/commons/f3-ghg-table',
 
+            FAOSTAT_UI_COMMONS              : '' +   'tiled-analysis/submodules/faostat-ui-commons/js/faostat-ui-commons',
+            faostat_ui_commons              : '' +   'tiled-analysis/submodules/faostat-ui-commons',
+            FAOSTAT_UI_WIDE_TABLES          : '' + 'tiled-analysis/submodules/faostat-ui-wide-tables/js/faostat-ui-wide-tables',
+            faostat_ui_wide_tables          : '' + 'tiled-analysis/submodules/faostat-ui-wide-tables',
+            FAOSTAT_UI_ANALYSIS_GHG_QA_QC   : '' +   'tiled-analysis/submodules/faostat-ui-analysis-ghg-qaqc/js/faostat-ui-analysis-ghg-qaqc',
+            faostat_ui_analysis_ghg_qa_qc   : '' +   'tiled-analysis/submodules/faostat-ui-analysis-ghg-qaqc',
+
             // Geobricks-ui-distribution
             'GEOBRICKS-UI-DISTRIBUTION': fnx_modules + 'geobricks_ui_distribution/js/distribution',
             geobricks_ui_distribution: fnx_modules + 'geobricks_ui_distribution',
@@ -405,130 +430,193 @@
         },
 
         shim: {
+
+            'highcharts': ['jquery'],
             'highcharts_exporting': ['highcharts'],
             'FENIXChartsLibrary': ['highcharts'],
+            'bootstrap': ['jquery'],
+            'amplify': ['jquery'],
+            'chosen': ['jquery'],
+            'jstree': ['jquery'],
 
-            // new analysis stuff TODO: move to the CND with grunt
-            //'bootstrap': ['jquery'],
-            //'chosen': ['jquery'],
+            'jquery.chromatable': ['jquery'],
+            'jquery.mousewheel': ['jquery'],
+            'jquery.fancybox': ['jquery'],
+            'jquery.history': ['jquery'],
+            'jquery.power.tip': ['jquery'],
+            'jquery.sticky': ['jquery'],
+            'jquery.scrollUp': ['jquery'],
+            'jQRangeSlider': ['jquery'],
+            'jquery.i18n.properties': ['jquery'],
+
+            'jqwidgets-all': ['jquery'],
+            'jqwidgets-plugins': ['jqwidgets-all'],
+
 
             'underscore': {
-                //  deps :['jquery'],
+                deps :['jquery'],
                 exports: '_'
             },
 
-            'HOME': { deps :[
-                'highcharts',
-                'highcharts_exporting',
-                'HOME_faostat-home-charts',
-                'HOME_faostat-home-database-updates'
-            ]},
+            FAOSTAT_GATEWAY: {
+                deps: [
+                    'jquery',
+                    'jquery.chromatable',
+                    'jquery.mousewheel',
+                    'jquery.fancybox',
+                    'jquery.history',
+                    'jquery.power.tip',
+                    'jquery.sticky',
+                    'jquery.scrollUp',
+                    'jquery.i18n.properties',
 
-            'BROWSE': { deps :[
-//                'chosen',
+                    'FAOSTAT_CORE',
+                    'FAOSTAT_UIUtils'
+                ]
+            },
 
-                'highcharts',
-                'highcharts_exporting',
-                'FENIXChartsLibrary',
+            'HOME': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
 
-                // browse
-                'BROWSE_jshashtable',
-                'BROWSE_google-analytics-manager',
-                'BROWSE_faostat-browse-tree',
-                'BROWSE_UIBuilder',
-                'BROWSE_UIBuilderGrowthRate',
-                'BROWSE_UIBuilderTable',
-                'BROWSE_UIBuilderMap',
-                'BROWSE_UIBuilderChart',
-                'BROWSE_UIBuilderObjectsStructure',
-                'BROWSE_UIBuilderSelectors',
-                'BROWSE_I18NInjector',
-                'BROWSE_UIBuilderByCountry',
-                'BROWSE_UIBuilderRankings',
-                'BROWSE_UIBuilderTabSelector',
-                'BROWSE_Export',
-                'BROWSE_FAOSTATBrowseUtils'
-            ]},
+                    'highcharts',
+                    'highcharts_exporting',
+                    'HOME_faostat-home-charts',
+                    'HOME_faostat-home-database-updates'
+                ]
+            },
 
-            'SEARCH': { deps :[
-                'SEARCH_faostat-search-export',
-                'SEARCH_faostat-search-google-analytics-manager',
-                'SEARCH_faostat-search-single-result'
-            ]},
+            'BROWSE': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
+                    'jqwidgets-all',
+                    'jqwidgets-plugins',
 
-            'DOWNLOAD': { deps :[
-                // download modules
-                'DOWNLOAD_pivot',
-                'DOWNLOAD_countriesAgg',
-                'DOWNLOAD_configuration',
-                'DOWNLOAD_FBSN',
-                'DOWNLOAD_F3DWLD',
-                'DOWNLOAD_F3DWLDNotes',
-                'DOWNLOAD_I18N',
-                'DOWNLOAD_cpi',
-                'DOWNLOAD_collector',
-                'DOWNLOAD_faostat-download-tree',
-                'DOWNLOAD_google-analytics-manager',
-                'DOWNLOAD_Grid_Message',
-                'DOWNLOAD_Grid'
-            ]},
+                    'highcharts',
+                    'highcharts_exporting',
+                    'FENIXChartsLibrary',
 
-            'COMPARE': { deps :[
-                'highcharts',
-                'highcharts_exporting',
-                'FENIXChartsLibrary',
+                    // browse
+                    'BROWSE_jshashtable',
+                    'BROWSE_google-analytics-manager',
+                    'BROWSE_faostat-browse-tree',
+                    'BROWSE_UIBuilder',
+                    'BROWSE_UIBuilderGrowthRate',
+                    'BROWSE_UIBuilderTable',
+                    'BROWSE_UIBuilderMap',
+                    'BROWSE_UIBuilderChart',
+                    'BROWSE_UIBuilderObjectsStructure',
+                    'BROWSE_UIBuilderSelectors',
+                    'BROWSE_I18NInjector',
+                    'BROWSE_UIBuilderByCountry',
+                    'BROWSE_UIBuilderRankings',
+                    'BROWSE_UIBuilderTabSelector',
+                    'BROWSE_Export',
+                    'BROWSE_FAOSTATBrowseUtils'
+                ]},
 
-                'COMPARE_jshashtable',
-                'COMPARE_CompareI18N',
-                'COMPARE_CompareI18NInjector',
-                'COMPARE_CompareUIBuilderSelectors',
-                'COMPARE_CompareUIBuilderChart',
-                'COMPARE_CompareUIBuilderTable',
-                'COMPARE_CompareUIBuilderMap',
-                'COMPARE_CompareUtils',
-                'COMPARE_compare-google-analytics-manager',
-                'COMPARE_CompareUIUtils'
-            ]},
+            'SEARCH': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
 
+                    'SEARCH_faostat-search-export',
+                    'SEARCH_faostat-search-google-analytics-manager',
+                    'SEARCH_faostat-search-single-result'
+                ]
+            },
 
-            'MES': { deps :[
-                'MES_google-analytics-manager'
-            ]},
+            'DOWNLOAD': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
 
-            'FAOSTAT_ANALYSIS': {deps: [
-                'FAOSTAT_ANALYSIS_COLLECTOR',
-                'FAOSTAT_ANALYSIS_GOOGLE_ANALYTICS',
-                'FAOSTAT_ANALYSIS_WDS_CLIENT'
-            ]},
+                    // download modules
+                    'DOWNLOAD_pivot',
+                    'DOWNLOAD_countriesAgg',
+                    'DOWNLOAD_configuration',
+                    'DOWNLOAD_FBSN',
+                    'DOWNLOAD_F3DWLD',
+                    'DOWNLOAD_F3DWLDNotes',
+                    'DOWNLOAD_I18N',
+                    'DOWNLOAD_cpi',
+                    'DOWNLOAD_collector',
+                    'DOWNLOAD_faostat-download-tree',
+                    'DOWNLOAD_google-analytics-manager',
+                    'DOWNLOAD_Grid_Message',
+                    'DOWNLOAD_Grid'
+                ]
+            },
+
+            'COMPARE': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
+
+                    'jquery-ui',
+                    'highcharts',
+                    'highcharts_exporting',
+                    'FENIXChartsLibrary',
+
+                    'COMPARE_jshashtable',
+                    'COMPARE_CompareI18N',
+                    'COMPARE_CompareI18NInjector',
+                    'COMPARE_CompareUIBuilderSelectors',
+                    'COMPARE_CompareUIBuilderChart',
+                    'COMPARE_CompareUIBuilderTable',
+                    'COMPARE_CompareUIBuilderMap',
+                    'COMPARE_CompareUtils',
+                    'COMPARE_compare-google-analytics-manager',
+                    'COMPARE_CompareUIUtils'
+                ]
+            },
+
+            'MES': {
+                deps :[
+                    'FAOSTAT_GATEWAY',
+                    'MES_google-analytics-manager'
+                ]
+            },
+
+            'FAOSTAT_ANALYSIS': {
+                deps: [
+                    'FAOSTAT_GATEWAY',
+
+                    'FAOSTAT_ANALYSIS_COLLECTOR',
+                    'FAOSTAT_ANALYSIS_GOOGLE_ANALYTICS',
+                    'FAOSTAT_ANALYSIS_WDS_CLIENT'
+                ]
+            },
 
             // TODO: fix jquery and jquery-ui
             'fenix-map':  {
                 deps: [
-//                    'jquery',
+                    'jquery',
                     'leaflet',
-//                    'jquery-ui',
+                    'jquery-ui',
                     'fenix-map-config',
                     'import-dependencies',
-                    //'jquery.power.tip',
-                    //'jquery.i18n.properties',
-                    'jquery.hoverIntent', 'chosen']
+                    'jquery.power.tip',
+                    'jquery.i18n.properties',
+                    'jquery.hoverIntent',
+                    'chosen'
+                ]
             }
         }
     });
-
-    FAOSTATGateway._loadUI($_MODULE_CONFIG)
 </script>
 
 <script>
-    $(window).on("load", function(e) {
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29534670-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    //    $(window).on("load", function(e) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29534670-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    // load gateway
+    require(['FAOSTAT_GATEWAY'], function () {
+        FAOSTATGateway.loadUI($_MODULE_CONFIG)
     });
 </script>
 </body>
