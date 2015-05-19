@@ -15,19 +15,20 @@
     <!-- sweetAlert -->
     <link href='http://fenixapps.fao.org/repository/js/sweet-alert/0.4.2/sweet-alert.css' rel='stylesheet'>
 
+    <!-- jquery.scrollPane -->
+    <link href='http://fenixapps.fao.org/repository/js/repository/js/jquery.scrollpane/2.0.14/jquery.jscrollpane' rel='stylesheet'>
+
     <!-- Fancybox -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/jquery.fancybox.css?v=2.1.4" />
 
-
     <!-- Download Pivot -->
     <link type="text/css" rel="stylesheet" href="/faostat-download-js/css/myPivot.css" />
     <link type="text/css" rel="stylesheet" href="/faostat-ghg/static/faostat/faostat-pivot.css" />
-
-
     <link type="text/css" rel="stylesheet" href="/faostat-download-js/pivotAgg/grid/gt_grid_height.css" />
 
+    <!-- Jquery -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jquery.min.css" />
 
     <!-- jquery.rangeslider (SEARCH) -->
@@ -299,14 +300,6 @@
             'amplify' : repository + 'amplify/1.1.2/amplify.min',
             underscore: repository + 'underscore/1.8.0/underscore.min',
 
-            // fenix-map-js
-            'import-dependencies'   : repository + 'FENIX/utils/import-dependencies-1.0',
-            'leaflet'               : repository + 'leaflet/0.7.3/leaflet',
-            'jquery.power.tip'      : repository + 'jquery.power.tip/1.2.0/jquery.powertip',
-            'jquery-ui'             : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
-            'jquery.i18n.properties': repository + 'jquery/1.0.9/jquery.i18n.properties-min',
-            'jquery.hoverIntent'    : repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
-            'fenix-map'             : repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.min',
             'jquery.chromatable'    : repository + 'jquery.chromatable/1.3.0/jquery.chromatable',
             'jquery.mousewheel'     : repository + 'jquery.mousewheel/1.0/jquery-mousewheel',
             'jquery.fancybox'       : repository + 'jquery.fancybox/2.1.4/source/jquery.fancybox',
@@ -314,9 +307,16 @@
             'jquery.sticky'         : repository + 'stickyjs/1.0.0/jquery.sticky',
             'jquery.scrollUp'       : repository + 'scrollup/2.3.3/js/jquery.scrollUp.min',
             'jQRangeSlider'         : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
+            'jquery.scrollpane'     :  repository + 'jquery.scrollpane/2.0.14/jquery.jscrollpane.min',
 
-
-
+            // fenix-ui-map
+            'import-dependencies'   : repository + 'FENIX/utils/import-dependencies-1.0',
+            'leaflet'               : repository + 'leaflet/0.7.3/leaflet',
+            'jquery.power.tip'      : repository + 'jquery.power.tip/1.2.0/jquery.powertip',
+            'jquery-ui'             : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
+            'jquery.i18n.properties': repository + 'jquery/1.0.9/jquery.i18n.properties-min',
+            'jquery.hoverIntent'    : repository + 'jquery.hoverIntent/1.0/jquery.hoverIntent',
+            'fenix-map'             : repository + 'fenix-ui-map/ghg_demo/fenix-ui-map.min',
             'fenix-map-config'      :   repository + 'fenix-ui-map/ghg_demo/fenix-ui-map-config',
 
             // jshashtable
@@ -351,7 +351,6 @@
             'BROWSE_UIBuilderTabSelector'       :"faostat-browse-js/js/UIBuilderTabSelector",
             'BROWSE_Export'                     :"faostat-browse-js/js/Export",
             'BROWSE_FAOSTATBrowseUtils'         :"faostat-browse-js/js/FAOSTATBrowseUtils",
-
 
             // Compare
             'COMPARE'                          : 'faostat-compare-js/js/faostat-compare',
@@ -453,6 +452,7 @@
             'jQRangeSlider': ['jquery'],
             'jquery.i18n.properties': ['jquery'],
             'jquery-ui': ['jquery'],
+            'jquery.scrollpane': ['jquery'],
 
             'jqwidgets-all': ['jquery'],
             'jqwidgets-plugins': ['jqwidgets-all'],
@@ -533,6 +533,8 @@
             'DOWNLOAD': {
                 deps :[
                     'FAOSTAT_GATEWAY',
+                    'jqwidgets-all',
+                    'jquery.scrollpane',
 
                     // download modules
                     'DOWNLOAD_pivot',
