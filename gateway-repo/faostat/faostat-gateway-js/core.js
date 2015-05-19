@@ -160,7 +160,7 @@ if (!window.CORE) {
                                         'placeholder': 'container',
                                         'placeholder_id': 'container',
                                         'lang': obj.lang,
-                                        'url_wds': CORE.baseURL_WDS5
+                                        'url_wds': CORE.baseURL_WDS5,
                                     }
                                 );
                                 m.init(config);
