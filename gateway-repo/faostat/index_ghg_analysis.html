@@ -270,7 +270,7 @@
 
     require.config({
 
-        waitSeconds: 2,
+        waitSeconds: 20,
 
         /* BASE URL of the modules */
         baseUrl: '//localhost:8080/',
@@ -412,6 +412,10 @@
             faostat_ui_wide_tables          : '' + 'tiled-analysis/submodules/faostat-ui-wide-tables',
             FAOSTAT_UI_ANALYSIS_GHG_QA_QC   : '' +   'tiled-analysis/submodules/faostat-ui-analysis-ghg-qaqc/js/faostat-ui-analysis-ghg-qaqc',
             faostat_ui_analysis_ghg_qa_qc   : '' +   'tiled-analysis/submodules/faostat-ui-analysis-ghg-qaqc',
+
+            // GHG Spatial
+            'FAOSTAT-UI-ANALYSIS-GHG-SPATIAL': fnx_modules + 'faostat-ui-analysis-ghg-spatial/js/main',
+            'faostat-ui-analysis-ghg-spatial': fnx_modules + 'faostat-ui-analysis-ghg-spatial',
 
             // Geobricks-ui-distribution
             'GEOBRICKS-UI-DISTRIBUTION': fnx_modules + 'geobricks_ui_distribution/js/distribution',
