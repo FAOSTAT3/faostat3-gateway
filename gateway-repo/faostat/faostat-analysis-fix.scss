@@ -225,3 +225,15 @@
 #powerTip {
   z-index:1000;
 }
+
+/* chosen fixes */
+
+.chosen-container-single .chosen-single{
+  background: transparent !important;
+  color: #666666 !important;
+}
+
+.chosen-single {
+  height: 29px !important;
+  line-height: 29px !important;
+}
