@@ -31,7 +31,6 @@ if (!window.FAOSTATHome) {
                 'type':'iframe',
                 'autoScale':'false'
             });
-
         },
 
         _loadNews: function(id, type, lang) {
@@ -41,7 +40,6 @@ if (!window.FAOSTATHome) {
                 for( var i=0; i < data.length; i++) {
                     var html = '<h4>'+ data[i].title[lang] + '</h3>';
                     html += '<p>' + data[i].description[lang] +'</p>';
-                    html += '<br>';
                     $('#' + id).append(html);
                 }
             });
@@ -112,16 +110,20 @@ if (!window.FAOSTATHome) {
             $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_database'));
             $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_withoneclick'));
 
-
             $("#fs-home-sy").html($.i18n.prop('_fs_sy'));
             $("#fs-home-sy-2013").prepend($.i18n.prop('_fs_sy'));
             $("#fs-home-sy-description").html($.i18n.prop('_fs_sy_description'));
+
+            $("#fs-home-hm").html($.i18n.prop('_fs_hm_title'));
+            $("#fs-home-hm-text").prepend($.i18n.prop('_fs_hm_text'));
+            $("#fs-home-hm-description").html($.i18n.prop('_fs_hm_description'));
+
+
             $("#partners").html($.i18n.prop('_partners'));
             $("#fs-featured-links").html($.i18n.prop('_featured_links'));
             $("#fs-contacts").html($.i18n.prop('_contacts'));
 
             $("#fs-highlights").html($.i18n.prop('_highlights'));
-
 
             /** tooltips **/
             var placement = "s"
@@ -164,8 +166,23 @@ if (!window.FAOSTATHome) {
             $('#wfp').attr("title", "World Food Programme (WFP)");
             $("#wfp").powerTip({placement: placement});
 
-            $("#fs-home-sy-link").click(function(){
+/*            $("#fs-home-sy-link").click(function(){
                 window.open("http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en", "_blank");
+            });*/
+
+            $("#fs-home-hm-link").click(function(){
+                switch (CORE.lang.toUpperCase()) {
+                    case "E" :
+                        window.open("http://www.fao.org/hunger/en/", "_blank");
+                        break;
+                    case "F" :
+                        window.open("http://www.fao.org/hunger/fr/", "_blank");
+                        break;
+                    case "S" :
+                        window.open("http://www.fao.org/hunger/es/", "_blank");
+                        break;
+                }
+
             });
         },
 

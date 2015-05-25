@@ -13,7 +13,7 @@ if (!window.FAOSTATDatabaseUpdate) {
 
         _getDatabaseUpdates: function(db, lang) {
             var q = {};
-            q.query = "SELECT TOP 10 groupcode, groupname" + FAOSTATDatabaseUpdate.lang + ", domaincode, domainname" + FAOSTATDatabaseUpdate.lang + ", DATENAME(mm, dateupdate) AS Month,  DATENAME(yyyy, dateupdate) AS Year  " +
+            q.query = "SELECT TOP 13 groupcode, groupname" + FAOSTATDatabaseUpdate.lang + ", domaincode, domainname" + FAOSTATDatabaseUpdate.lang + ", DATENAME(mm, dateupdate) AS Month,  DATENAME(yyyy, dateupdate) AS Year  " +
                 "FROM Domain " +
                 "ORDER BY dateupdate DESC ";
             var data = {};
@@ -24,12 +24,10 @@ if (!window.FAOSTATDatabaseUpdate) {
             data.json = JSON.stringify(q);
 
             var _this = this;
-            //console.log(data);
             $.ajax({
                 type : 'POST',
 //                url : 'http://' + CORE.baseURL + '/wds/rest/table/json',
                url : 'http://faostat3.fao.org/wds/rest/table/json',
-                //url : 'http://fenixapps.fao.org/wds/rest/table/json',
                 data : data,
                 success : function(response) {
 
@@ -53,7 +51,6 @@ if (!window.FAOSTATDatabaseUpdate) {
                         }
                         html += '<span style="cursor:pointer;" id="update_' +response[i][2] +'"><b>'+ response[i][3] + "</b> - " + response[i][1]  +'</span>';
                     }
-
 
                     html += '</ul>';
                     $("#database-updates").html(html);
