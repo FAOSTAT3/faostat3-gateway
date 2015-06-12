@@ -1,66 +1,14 @@
 [
     {
         "title": {
-            "E" : "MAY 2015",
-            "F" : "MAI 2015",
-            "S" : "MAYO 2015"
+            "E" : "JUNE 2015",
+            "F" : "JUIN 2015",
+            "S" : "JUNIO 2015"
         },
         "description":  {
-            "E" : "Trade data update (2012).",
-            "F" : "Mise à jour des données commerciales (2012).",
-            "S" : "Actualización de datos comerciales (2012)."
-        }
-    },
-    {
-        "title": {
-            "E" : "APRIL 2015",
-            "F" : "AVRIL 2015",
-            "S" : "ABRIL 2015"
-        },
-        "description":  {
-            "E" : "Food Balance Sheets, Commodity Balances and Food Supply update on selected Countries.",
-            "F" : "Fiches de bilan alimentaire, bilans des produits et mise à jour de la disponibilité alimentaire dans les pays sélectionnés.",
-            "S" : "Hojas de balance de Alimentos, balances de productos y actualización de reserva de alimentos en los países seleccionados."
-        }
-    },
-    {
-        "title": {
-            "E" : "APRIL 2015",
-            "F" : "AVRIL 2015",
-            "S" : "ABRIL 2015"
-        },
-        "description":  {
-            "E" : "GHG, Energy use update.",
-            "F" : "Emissions de gaz de serre, mise à jour de la consommation en énergie",
-            "S" : "Emisiones de gases de efecto invernadero, actualización de consumo de energia."
-        }
-    },
-    {
-        "title": {
-            "E" : "APRIL 2015",
-            "F" : "AVRIL 2015",
-            "S" : "ABRIL 2015"
-        },
-        "description":  {
-            "E" : "Launch of new Credit to Agriculture domain.",
-            "F" : "Lancement de nouveau crédit dans le domaine agricole.",
-            "S" : "Lanzamiento de nuevo crédito en el campo agrícola."
-        }
+            "E" : "Macro Statistics.",
+            "F" : "Macro - statistiques, indicadores clave.",
+            "S" : "Macro - estadísticas, indicateurs clés."
+            }
     }
 ] 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
