@@ -6,6 +6,18 @@
             "S" : "JUNIO 2015"
         },
         "description":  {
+            "E" : "Due to data collection issues, monthly food CPI (Consumer price index) updates will be suspended until October 2015.",
+            "F" : "En raison de problèmes de collecte des données, la mise à jour mensuelle de l’IPC (Indice des prix à la consommation) sera suspendue jusqu'en octobre 2015.",
+            "S" : "Debido a problemas con la recolección de datos, la actualización mensual del IPC (Índice de Precios al Consumidor) será suspendido hasta octubre 2015."
+        }
+    },
+    {
+        "title": {
+            "E" : "JUNE 2015",
+            "F" : "JUIN 2015",
+            "S" : "JUNIO 2015"
+        },
+        "description":  {
             "E" : "Macro Statistics.",
             "F" : "Macro - statistiques, indicadores clave.",
             "S" : "Macro - estadísticas, indicateurs clés."
