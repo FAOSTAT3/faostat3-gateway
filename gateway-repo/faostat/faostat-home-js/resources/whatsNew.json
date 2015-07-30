@@ -1,6 +1,18 @@
 [
     {
         "title": {
+            "E" : "JULY 2015",
+            "F" : "JUILLET 2015",
+            "S" : "JULIO 2015"
+        },
+        "description":  {
+            "E" : "Update of forestry production and trade domain, including preliminary 2014 data.",
+            "F" : "Mise à jour des données de la production forestière et du domaine du commerce, y compris les données préliminaires 2014.",
+            "S" : "Actualización de la producción forestal y del dominio del comercio, incluyendo los datos preliminares del 2014."
+        }
+    },
+    {
+        "title": {
             "E" : "JUNE 2015",
             "F" : "JUIN 2015",
             "S" : "JUNIO 2015"
