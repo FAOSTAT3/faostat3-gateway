@@ -1,6 +1,18 @@
 [
     {
         "title": {
+            "E" : "SEPTEMBER 2015",
+            "F" : "SEPTEMBRE 2015",
+            "S" : "SEPTIEMBRE 2015"
+        },
+        "description":  {
+            "E" : "2013 updates for Annual and Monthly producer prices, Annual producer price indices and value of Agricultural production.",
+            "F" : "Mise à jour 2013 des prix mensuels et annuels à la production, indices des prix à la production annuelle et valeur de la production agricole.",
+            "S" : "Versión 2013 actualizada de los precios al productor mensuales y anuales, índices de precios al productor anual y valor de la producción agrícola."
+        }
+    },
+    {
+        "title": {
             "E" : "JULY 2015",
             "F" : "JUILLET 2015",
             "S" : "JULIO 2015"
