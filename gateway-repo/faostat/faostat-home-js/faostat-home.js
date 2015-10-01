@@ -38,7 +38,7 @@ if (!window.FAOSTATHome) {
             $('#' + id).empty()
             $.getJSON(url, function(data) {
                 for( var i=0; i < data.length; i++) {
-                    var html = '<h4>'+ data[i].title[lang] + '</h3>';
+                    var html = '<h4><b>'+ data[i].title[lang] + '</b></h4>';
                     html += '<p>' + data[i].description[lang] +'</p>';
                     $('#' + id).append(html);
                 }
@@ -173,13 +173,13 @@ if (!window.FAOSTATHome) {
             $("#fs-home-hm-link").click(function(){
                 switch (CORE.lang.toUpperCase()) {
                     case "E" :
-                        window.open("http://www.fao.org/hunger/en/", "_blank");
+                        window.open("http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en/#.Vgz8j3ZStHx", "_blank");
                         break;
                     case "F" :
-                        window.open("http://www.fao.org/hunger/fr/", "_blank");
+                        window.open("http://www.fao.org/economic/ess/ess-publications/lannuaire-statistique/fr/#.Vg0htnZStHw", "_blank");
                         break;
                     case "S" :
-                        window.open("http://www.fao.org/hunger/es/", "_blank");
+                        window.open("http://www.fao.org/economic/ess/ess-publications/anuario-estadistico/es/#.Vg0hwHZStHw", "_blank");
                         break;
                 }
 
