@@ -22,8 +22,8 @@ var FS_HOME_CHART = (function() {
                 plotBorderWidth: 0, //Spessore bordo intorno solo area chart
                 style: {
                     fontFamily: 'Roboto', // Font di tutto
-                    fontSize: '12px', // La dimensione qui vale solo per i titoli
-                    fontWeight: 300 // Con Roboto è molto bello giocare con i pesi
+                    fontSize: '11px', // La dimensione qui vale solo per i titoli
+                    fontWeight: 200 // Con Roboto è molto bello giocare con i pesi
                 },
                 zoomType: 'xy', //Attiva lo zoom e stabilisce in quale dimensione
                 resetZoomButton: {
@@ -38,7 +38,7 @@ var FS_HOME_CHART = (function() {
                         width: 60, //Larghezza del pulsante reset
                         style: {
                             textAlign: 'center', //CSS style aggiunto da me per centrare il testo
-                            fontSize: 10
+                            fontSize: 9
                         },
                         states: {
                             hover: {
@@ -172,7 +172,7 @@ var FS_HOME_CHART = (function() {
                 x: -20
             },
             xAxis: {
-                categories: ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+                categories: ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
                 gridLineWidth:1, // IMPORTANTE - Attiva le linee verticali
                 lineColor: '#e0e0e0',
                 tickColor: '#e0e0e0',
@@ -183,12 +183,12 @@ var FS_HOME_CHART = (function() {
                     style: {
                         color: '#666666',
                         fontWeight: '300',
-                        fontSize: 10
+                        fontSize: 9
                     }
                 }
             },
             yAxis: {
-                floor: 800,
+                floor: 750,
                 ceiling: 1100,
                 gridLineWidth: 1, // IMPORTANTE - Attiva le linee verticali
                 lineWidth:1,
@@ -219,7 +219,7 @@ var FS_HOME_CHART = (function() {
             },
             series: [{
                 name: serie,
-                data: [1015, 1030, 1026, 1010, 973, 949, 944, 932, 933, 940, 957, 949, 944, 934, 931, 907, 890, 883, 878, 870, 854, 842]
+                data: [1010.70, 1020.80, 1021.50, 1010.90, 989, 966.20, 949.50, 938.10, 929, 924.30, 929.60, 943.80, 959.20, 966.20, 961.70, 942.30, 913.80, 883.80, 857.90, 838, 820.60, 807.80, 800.30, 795.50, 792.50]
             }]
         });
     }
