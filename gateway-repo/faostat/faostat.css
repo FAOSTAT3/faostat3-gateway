@@ -1578,6 +1578,11 @@ table.calculated_table td {
     width: 90% !important;
 }
 
+.selector_browse {
+    height: 21px !important;
+    width: 90% !important;
+}
+
 
 
 .submenu_hr {
